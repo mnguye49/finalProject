@@ -8,7 +8,7 @@ Fill the document out following the guidelines listed in each section. Maintain 
 
 * [Thi Nguyen](mailto:mnguye49@uncc.edu)
 * [Tan Nguyen](mailto:tnguy241@uncc.edu)
-* [Name](mmailto:email@uncc.edu)
+* [Mina Rao](mmailto:mrao11@uncc.edu)
 * [Name](mmailto:email@uncc.edu)
 
 ## Revisions
