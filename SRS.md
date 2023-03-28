@@ -7,7 +7,7 @@ Fill the document out following the guidelines listed in each section. Maintain 
 ## Group Members
 
 * [Thi Nguyen](mailto:mnguye49@uncc.edu)
-* [Name](mmailto:email@uncc.edu)
+* [Tan Nguyen](mmailto:tnguy241@uncc.edu)
 * [Name](mmailto:email@uncc.edu)
 * [Name](mmailto:email@uncc.edu)
 
