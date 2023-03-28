@@ -9,7 +9,6 @@ Fill the document out following the guidelines listed in each section. Maintain 
 * [Thi Nguyen](mailto:mnguye49@uncc.edu)
 * [Tan Nguyen](mailto:tnguy241@uncc.edu)
 * [Mina Rao](mailto:mrao11@uncc.edu)
-* [Name](mmailto:email@uncc.edu)
 
 ## Revisions
 
@@ -18,6 +17,7 @@ When a change is made to the document, a new revision should be created. The rev
 | Version | Date | Description | Author | Reviewed By |
 | --- | --- | --- | --- | --- |
 | 1.0 | 03/22/23 | Initial draft | [David Gary](mailto:dgary9@uncc.edu) | [David Gary](mailto:dgary@uncc.edu) |
+| 1.0 | 03/28/23 | Worked on intro | [David Gary](mailto:dgary9@uncc.edu) | [David Gary](mailto:dgary@uncc.edu) |
 
 ## Table of Contents
 
@@ -32,6 +32,7 @@ When a change is made to the document, a new revision should be created. The rev
 
 In this section, you should give a brief overview of what your project will be. Describe the software system you are building and what problems it solves. You should also give a short description of the stakeholders (users of the system) and what their needs are. There is no set formatting requirement, but you should maintain a consistent structure across future sections. Not all members must contribute to this section. 
 
+Our final project will be a website for a cake business where the customers can order and customise their own cakes. 
 
 ## Requirements
 
