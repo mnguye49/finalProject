@@ -49,7 +49,7 @@ Each group member must supply at least three functional requirements for the pro
   * **Type:** Functional.
   * **Priority:** 1.
   * **Rationale:** It is the main service that is to be provided.
-  * **Testing:** We can place an order to see if it gets regisitered or goes through.
+  * **Testing:** We can place an order to see if it gets registered or goes through.
 
 ## Constraints
 
