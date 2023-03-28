@@ -51,6 +51,12 @@ Each group member must supply at least three functional requirements for the pro
   * **Priority:** 1.
   * **Rationale:** It is the main service that is to be provided.
   * **Testing:** We can place an order to see if it gets registered or goes through.
+* **REQ-2:**
+  * **Description:** The user must be able to customize their order.
+  * **Type:** Functional.
+  * **Priority:** 2.
+  * **Rationale:** The customer gets what they want and to accommodate for any allergies.
+  * **Testing:** After an order is placed, we can edit any attributes of the cakes.
 
 ## Constraints
 
