@@ -9,7 +9,6 @@ Fill the document out following the guidelines listed in each section. Maintain 
 * [Thi Nguyen](mailto:mnguye49@uncc.edu)
 * [Tan Nguyen](mailto:tnguy241@uncc.edu)
 * [Mina Rao](mailto:mrao11@uncc.edu)
-* [Name](mmailto:email@uncc.edu)
 
 ## Revisions
 
@@ -18,6 +17,8 @@ When a change is made to the document, a new revision should be created. The rev
 | Version | Date | Description | Author | Reviewed By |
 | --- | --- | --- | --- | --- |
 | 1.0 | 03/22/23 | Initial draft | [David Gary](mailto:dgary9@uncc.edu) | [David Gary](mailto:dgary@uncc.edu) |
+| 1.0 | 03/28/23 | Worked on intro and requirements | [Thi Nguyen](mailto:mnguye49@uncc.edu) | [Thi Nguyen](mailto:mnguye49@uncc.edu) |
+| 1.0 | 03/28/23 | Worked on requirements | [Tan Nguyen](mailto:tnguy241@uncc.edu) | [Tan Nguyen](mailto:tnguy241@uncc.edu) |
 
 ## Table of Contents
 
@@ -32,6 +33,7 @@ When a change is made to the document, a new revision should be created. The rev
 
 In this section, you should give a brief overview of what your project will be. Describe the software system you are building and what problems it solves. You should also give a short description of the stakeholders (users of the system) and what their needs are. There is no set formatting requirement, but you should maintain a consistent structure across future sections. Not all members must contribute to this section. 
 
+Our final project will be a website for a cake business where the customers can order and customise their own cakes that can be delivered to their homes and other locations. Due to the internet evolving, more and more businesses are adding their services onto online platforms in order to expand. In addition, some customers may not have a means of transportation for reasons and may need their goods to be delivered to them.
 
 ## Requirements
 
@@ -43,12 +45,30 @@ Each group member must supply at least three functional requirements for the pro
   * **Priority:** The priority of the requirement. This should be a number between 1 and 5, with 1 being the highest priority and 5 being the lowest priority.
   * **Rationale:** A short description of why the requirement is important. This should be a single sentence that describes why the requirement is important.
   * **Testing:** A short description of how the requirement can be tested. This should be a single sentence that describes how the requirement can be tested.
-* **ID:** A unique identifier for the requirement. This should be a number that is unique across the entire document (something like REQ-1, REQ-2, etc. but be sure to replace the word `ID` with the unique identifier).
-  * **Description:** A short description of the requirement. This should be a single sentence that describes the requirement.
-  * **Type:** The type of requirement. Should be either `Functional` or `Non-Functional`.
-  * **Priority:** The priority of the requirement. This should be a number between 1 and 5, with 1 being the highest priority and 5 being the lowest priority.
-  * **Rationale:** A short description of why the requirement is important. This should be a single sentence that describes why the requirement is important.
-  * **Testing:** A short description of how the requirement can be tested. This should be a single sentence that describes how the requirement can be tested.
+* **REQ-1:** A unique identifier for the requirement. This should be a number that is unique across the entire document (something like REQ-1, REQ-2, etc. but be sure to replace the word `ID` with the unique identifier).
+  * **Description:** The user must be able to place an order.
+  * **Type:** Functional.
+  * **Priority:** 1.
+  * **Rationale:** It is the main service that is to be provided.
+  * **Testing:** We can place an order to see if it gets registered or goes through.
+* **REQ-2:**
+  * **Description:** The user must be able to customize their order.
+  * **Type:** Functional.
+  * **Priority:** 2.
+  * **Rationale:** The customer gets what they want and to accommodate for any allergies.
+  * **Testing:** After an order is placed, we can edit any attributes of the cakes.
+* **REQ-3:**
+  * **Description:** The user must be able to create a rewards account if they want and be able to log into and logout of that account securely.
+  * **Type:** Non-Functional
+  * **Priority:** 3
+  * **Rationale:** This is for user privacy and if an account is made it can provide rewards (such as a discount) to the user for multiple orders.
+  * **Testing: We create an account for testing purposes and check if we can still log into said account after logging out of it.
+* **REQ-4:**.
+  * **Description:** After placing an order, the user should be able to enter in their payment information (and if it is a delivery order, the address as well) and the website should process it.
+  * **Type:** Functional
+  * **Priority:** 1
+  * **Rationale:** So that payments can processed properly, the business gets paid for its work,  and so that all deliveries arrive at the correct location.
+  * **Testing:** After placing an order, we should expect for a form to appear asking the user for their information and if any of the required information is missing, the site should not continue with the order until it is filled in.
 
 ## Constraints
 
