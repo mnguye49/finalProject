@@ -78,7 +78,14 @@ Each group member must supply at least three functional requirements for the pro
   * **Type:** Functional
   * **Priority:** 2
   * **Rationale:** So that users can properly log into their accounts and the website can keep track of who is ordering in order to give rewards and so that no repeat emails are in the database.
-  * **Testing:** We can try making an account with using the same email as another account to see if we are allowed to proceed with the registration or not. If the program is working properly we should get a promt stating that the email is already being used and to use a different one.
+  * **Testing:** We can try making an account with using the same email as another account to see if we are allowed to proceed with the registration or not. If the program is working properly we should get a prompt stating that the email is already being used and to use a different one.
+
+* **REQ-6:**
+  * **Description:** The website must check if all required info is entered into the form provided.
+  * **Type:** Functional
+  * **Priority:** 1
+  * **Rationale:** If any of the required info's not entered, the order will be incomplete.
+  * **Testing:** We can fill out a form but leave out any required info. If we try to proceed with the order, a prompt would tell us that some info is missing.
 
 
 ## Constraints
@@ -88,6 +95,8 @@ In this section, you should list any constraints that you have for the project. 
 * Due to some group members having limited knowledge of Html and Javascript, it may take them some time to get the website to look and function like intended.
 * Getting the rewards system to work considering that it adds additional information that has to be processed (like how many orders are needed for the next reward) and how to have the user's name already filled in on the order form.
 * Getting the authentication process to work, checking if a pre-existing email is entered into the system and the backend of the system remebering to store and remeber any information entered.
+* Some parts of the code can be hard to understand.
+* Trying to work around the schedules of some of the group members.
 
 ## Use Cases
 
@@ -109,6 +118,8 @@ In this section, you should list use cases for the project. Use cases are a thor
   * **Actors:** Customer/User and backend of the website.
   * **Preconditions:** The user must have a valid email account and not be logged in before they can register for a rewards account.
   * **Postconditions:** After the user successfully registers, they must have a rewards account that they can log in and out of. In future orders, they must also receive the rewards promised to them after a certain amount of orders or money spent. The website must have the user's information in the system so that it can verify who the said user is.
+* **UC-3**
+  * **Description:** The user wants to customize their order. They can choose what flavor of cake and what type of frosting they want. The user is sent to a page that allows them to choose which fillings and toppings they want on their cake.
 
 ## User Stories
 
