@@ -142,7 +142,7 @@ Our final project will be a website for a cake business where the customers can 
   * **Description:** If a user is not signed up for the rewards program, there will be a pop that allows them to enter their email to sign up for it and also provide a discount on their first order. 
   * **Actors:** Customer/User, backend of the website
   * **Preconditions:** The user must not already be signed up for rewards and also must place their first order to get the discount. 
-  * **Poestconditions:** When the user is ready to checkout, the discounted should be applied to their final price
+  * **Postconditions:** When the user is ready to checkout, the discounted should be applied to their final price
 
 
   
