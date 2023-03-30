@@ -23,7 +23,7 @@ When a change is made to the document, a new revision should be created. The rev
 | 1.0 | 03/29/23 | Filled out required amount of info for each section | [Tan Nguyen](mailto:tnguy241@uncc.edu) | [Tan Nguyen](mailto:tnguy241@uncc.edu) |
 | 1.0 | 03/30/23 | Worked on intro and definitions | [Thi Nguyen](mailto:mnguye49@uncc.edu) | [Thi Nguyen](mailto:mnguye49@uncc.edu) |
 | 1.0 | 03/30/23 | Worked on all sections | [Mina rao](mailto:mrao11@uncc.edu) | [Mina rao](mailto:mrao11@uncc.edu) |
-
+| 1.0 | 03/30/23 | Did some editing and spellchecking | [Thi Nguyen](mailto:mnguye49@uncc.edu) | [Thi Nguyen](mailto:mnguye49@uncc.edu) |
 
 
 ## Table of Contents
@@ -40,15 +40,6 @@ When a change is made to the document, a new revision should be created. The rev
 Our final project will be a website for a cake business where the customers can order and customise their own cakes that can be delivered to their homes and other locations. The website will be created using Python and Javascript for the code and have Flask be used for a framework.  Due to the internet evolving, more and more businesses are adding their services onto online platforms in order to expand. In addition, some customers may not have a means of transportation for reasons and may need their goods to be delivered to them. Users should be able to order a cake on the website, customize it if they want and after paying for it and then be able to choose if they want to pick it up in person or have it delivered.
 
 ## Requirements
-
-Each group member must supply at least three functional requirements for the project. Each requirement should be written in the following format:
-
-* **ID:** A unique identifier for the requirement. This should be a number that is unique across the entire document (something like REQ-1, REQ-2, etc. but be sure to replace the word `ID` with the unique identifier).
-  * **Description:** A short description of the requirement. This should be a single sentence that describes the requirement. Do not replace the word `Description` with the actual description. Put the description in the space where these instructions are written. Maintain that practice for all future sections.
-  * **Type:** The type of requirement. Should be either `Functional` or `Non-Functional`.
-  * **Priority:** The priority of the requirement. This should be a number between 1 and 5, with 1 being the highest priority and 5 being the lowest priority.
-  * **Rationale:** A short description of why the requirement is important. This should be a single sentence that describes why the requirement is important.
-  * **Testing:** A short description of how the requirement can be tested. This should be a single sentence that describes how the requirement can be tested.
 
 * **REQ-1:** A unique identifier for the requirement. This should be a number that is unique across the entire document (something like REQ-1, REQ-2, etc. but be sure to replace the word `ID` with the unique identifier).
   * **Description:** The user must be able to place an order for a cake.
@@ -88,7 +79,7 @@ Each group member must supply at least three functional requirements for the pro
   * **Testing:** We can fill out a form but leave out any required information. If we try to proceed with the order, a prompt would tell us that some information is missing.
 
 * **REQ-7:**
-  * **Description:** The website should be organized and inlcude sections such as a menu, pricing, special ordering and contact information sections
+  * **Description:** The website should be organized and include sections such as a menu, pricing, special ordering and contact information sections
   * **Type:** Functional
   * Priority: 4
   * **Rationale:** This will ensure that the website is easy to navigate and that users are able to find exactly what they need. 
@@ -97,8 +88,8 @@ Each group member must supply at least three functional requirements for the pro
 * **REQ-8:** 
   * **Description:** The user must be able to cancel their order within one day of placing it. 
   * **Type:** Functional
-  * **Rationale:** This will ensure that customers can cancel their orders and get a refund. However, if the order has already been processes and is being made they shouldn't be able to cancel it so putting a one day time limit is important
-  * **Testing:** 
+  * **Rationale:** This will ensure that customers can cancel their orders and get a refund. However, if the order has already been processed and is being made they shouldn't be able to cancel it so putting a one day time limit is important
+  * **Testing:** We can place two orders into a list and cancel one immediately while we wait for 2 days to cancel the other.
 
 * **REQ-9:**
   * **Description:** The website must send the a reciept to the customer with order details and a tracking number and an estimaed date of arrival.
@@ -111,26 +102,16 @@ Each group member must supply at least three functional requirements for the pro
 
 ## Constraints
 
-In this section, you should list any constraints that you have for the project. Each group member must supply at least two constraints. These can be constraints on the project itself, the software system, or the stakeholders. Constraints can be anything that limits the scope of the project. For example, that this project's template code is written using Flask and Python constitutes a constraint on the backend of the project. Constraints can also be things like the required timeline of the project. Be creative.
-
 * Due to some group members having limited knowledge of Html and Javascript, it may take them some time to get the website to look and function like intended.
 * Getting the rewards system to work considering that it adds additional information that has to be processed (like how many orders are needed for the next reward) and how to have the user's name already filled in on the order form.
 * Getting the authentication process to work, checking if a pre-existing email is entered into the system and the backend of the system remembering to store and remember any information entered.
 * Some parts of the code can be hard to understand.
 * Trying to work around the schedules of some of the group members.
-* Due to the limited amount of time to work, many of non-database features such as customization may not be implemated until very late into the develpment stages.
-* Due to the high amount of customiablity that is available to users, there is more room for error
+* Due to the limited amount of time to work, many of non-database features such as customization may not be implemented until very late into the develpment stages.
+* Due to the high amount of customizablity that is available to users, there is more room for error
 * Since multiple people are working on one project there might be issues with each of us having different machines and different capabilities
 
 ## Use Cases
-
-In this section, you should list use cases for the project. Use cases are a thorough description of how the system will be used. Each group member must supply at least two use cases. Each use case should be written in the following format:
-
-* **ID:** A unique identifier for the use case. This should be a number that is unique across the entire document (something like UC-1, UC-2, etc. but be sure to replace the word `ID` with the unique identifier).
-  * **Description:** A description of the use case that gives the user a high-level overview of how the system is interacted with.
-  * **Actors:** A list of the actors that are involved in the use case. Only include the actors that are directly involved. Actors are the people or things that interact with the system. For example, when ordering at a fast food restaurant, one might have the following actors: the customer, the cashier, and the cook. But only the customer and the cashier are directly involved in the use case of ordering food. The cook is not directly involved in the use case of ordering food.
-  * **Preconditions:** A list of the preconditions for the use case. This should be a list of the preconditions for the use case, which are the conditions that must be met before the use case can be executed. Continuing with the restaurant example, the customer must have money in their wallet and the cashier must be logged in to the system before the use case of ordering food can be executed.
-  * **Postconditions:** A list of the postconditions for the use case. This should be a list of the postconditions for the use case, which are the conditions that must be met after the use case has been executed. Continuing with the restaurant example, the customer must have their food and the cashier must have the customer's money after the use case of ordering food has been executed.
 
 * **UC-1** 
   * **Description:** The user makes an order by clicking on a button/link that takes them to a page where they can choose from a preset cake or create their own custom cake. After choosing their cake, the website then takes them to a page with a form where they have to select the date of the pickup/delivery and if they are not logged into a rewards account, enter in a name for the order. Once that information is filled in, they are taken to a page where they must fill in their debit/credit card information. If any of the required infomation needed is missing from the forms, the user cannot proceed until it is filled in. The website then processes the payment and makes sure that the infomation entered is valid. Once the payment is processed, the user can choose to either pick up their cake in person or have it delivered to a specified location. If they choose to pick it up in person, they are taken to a page where they can locate the closest store location near them to have it made. If they choose to have it delivered, they are instead taken to a form where they are required to fill in the address in which the cake is to be delivered and an approximate time that it should arrive. After filling in all of the required information, the user's order is then complete.
@@ -148,17 +129,15 @@ In this section, you should list use cases for the project. Use cases are a thor
   * **Preconditions:** The user must be on the website in order for customization of their cake.
   * **Postconditions:** After customizing their cake, the user will be able to see the final product and the final price.
 * **UC-4**
-  * **Description:** The user wants to pick up their order. They can choose to pick up at the nearest shop and enter the state they live in. The website searches for any nearby locations in that state and returns them to the page. The user chooses which shop they wanted and the order will be delivered.
+  * **Description:** The user wants to pick up their order. They can choose to pick it up at the nearest shop and enter the state they live in. The website searches for any nearby locations in that state and returns them to the page. The user chooses which shop they wanted and the order will be delivered.
   * **Actors:** Customer/User, Workers, and Website
   * **Preconditions:** The user must be on the website and fill out their order and payment info. The user then selects to pick up their order.
   * **Postconditions:** After selecting the location to pick up their order, the user will receive their order when they arrive. The workers at the location will receive the order and start making it for the customer. The customer will be notified that the order has be sent to the location of the shop.
-
 * **UC-5**
-  * **Description:** The user wants to cancel their order. If it has been less than 24 hours since they placed their order, they will see an option to cancel it in yhe orders section of our site. They can choose that option and confirm to cancel. Also, it will display a pop-up that asks why they chose to cancel their order. Then their order will be refunded and a confirmation will be emailed to them. 
+  * **Description:** The user wants to cancel their order. If it has been less than 24 hours since they placed their order, they will see an option to cancel it in the orders section of our site. They can choose that option and confirm to cancel. Also, it will display a pop-up that asks why they chose to cancel their order. Then their order will be refunded and a confirmation will be emailed to them. 
   * **Actors:** Customer/User, backend of the website
   * **Preconditions:** The user must have placed an order using a valid email or phone number and must have opted to cancel it before 24 hours
-  * **Poestconditions:** The users order should be refunded and an email confirmation must be emailed to them
-
+  * **Postconditions:** The users order should be refunded and an email confirmation must be emailed to them
 * **UC-6**
   * **Description:** If a user is not signed up for the rewards program, there will be a pop that allows them to enter their email to sign up for it and also provide a discount on their first order. 
   * **Actors:** Customer/User, backend of the website
@@ -169,12 +148,6 @@ In this section, you should list use cases for the project. Use cases are a thor
   
 
 ## User Stories
-
-In this section, you should list user stories for the project. User stories are a short description of how a user will be interacting with the system. Each group member must supply at least two user stories. Each user story should be written in the following format:
-
-* **ID:** A unique identifier for the user story. This should be a number that is unique across the entire document (something like US-1, US-2, etc. but be sure to replace the word `ID` with the unique identifier).
-  * **Type of User:** The type of user that the user story is for. This should be a single word that describes the type of user. For example, a user story for a customer might be `Customer` and a user story for an administrator might be `Admin`.
-  * **Description:** A description of the user story that gives a narrative from that user's perspective. This can be any length, but it must paint the picture of what the user wants to do, how they intend to do it, why they want to, and what they expect to happen.
 
 * **US-1:**
   * **Type of User:** Customer
