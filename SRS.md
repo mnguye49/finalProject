@@ -22,6 +22,9 @@ When a change is made to the document, a new revision should be created. The rev
 | 1.0 | 03/29/23 | Worked on filling in my required amount of information for each section | [Thi Nguyen](mailto:mnguye49@uncc.edu) | [Thi Nguyen](mailto:mnguye49@uncc.edu) |
 | 1.0 | 03/29/23 | Filled out required amount of info for each section | [Tan Nguyen](mailto:tnguy241@uncc.edu) | [Tan Nguyen](mailto:tnguy241@uncc.edu) |
 | 1.0 | 03/30/23 | Worked on intro and definitions | [Thi Nguyen](mailto:mnguye49@uncc.edu) | [Thi Nguyen](mailto:mnguye49@uncc.edu) |
+| 1.0 | 03/30/23 | Worked on all sections | [Mina rao](mailto:mrao11@uncc.edu) | [Mina rao](mailto:mrao11@uncc.edu) |
+
+
 
 ## Table of Contents
 
@@ -117,7 +120,7 @@ In this section, you should list any constraints that you have for the project. 
 * Trying to work around the schedules of some of the group members.
 * Due to the limited amount of time to work, many of non-database features such as customization may not be implemated until very late into the develpment stages.
 * Due to the high amount of customiablity that is available to users, there is more room for error
-* 
+* Since multiple people are working on one project there might be issues with each of us having different machines and different capabilities
 
 ## Use Cases
 
@@ -150,6 +153,21 @@ In this section, you should list use cases for the project. Use cases are a thor
   * **Preconditions:** The user must be on the website and fill out their order and payment info. The user then selects to pick up their order.
   * **Postconditions:** After selecting the location to pick up their order, the user will receive their order when they arrive. The workers at the location will receive the order and start making it for the customer. The customer will be notified that the order has be sent to the location of the shop.
 
+* **UC-5**
+  * **Description:** The user wants to cancel their order. If it has been less than 24 hours since they placed their order, they will see an option to cancel it in yhe orders section of our site. They can choose that option and confirm to cancel. Also, it will display a pop-up that asks why they chose to cancel their order. Then their order will be refunded and a confirmation will be emailed to them. 
+  * **Actors:** Customer/User, backend of the website
+  * **Preconditions:** The user must have placed an order using a valid email or phone number and must have opted to cancel it before 24 hours
+  * **Poestconditions:** The users order should be refunded and an email confirmation must be emailed to them
+
+* **UC-6**
+  * **Description:** If a user is not signed up for the rewards program, there will be a pop that allows them to enter their email to sign up for it and also provide a discount on their first order. 
+  * **Actors:** Customer/User, backend of the website
+  * **Preconditions:** The user must not already be signed up for rewards and also must place their first order to get the discount. 
+  * **Poestconditions:** When the user is ready to checkout, the discounted should be applied to their final price
+
+
+  
+
 ## User Stories
 
 In this section, you should list user stories for the project. User stories are a short description of how a user will be interacting with the system. Each group member must supply at least two user stories. Each user story should be written in the following format:
@@ -170,6 +188,10 @@ In this section, you should list user stories for the project. User stories are 
 * **US-4**
   * **Type of User:** Admin
   * **Description:** As an admin, I need the website to show the user what their cake would look like after they customize it so that they can get an accurate representation of what their cake would be like and if they want to make any changes.
+* **US-5**
+  * **Type of User:** Admin
+  * **Description:** As an admin, I need the website to show when and why a user cancels their order. Once the user submits their cancellation request I must be able to see the reason why they canceled and store it for feedback
+  
 
 ## Glossary
 
@@ -191,3 +213,9 @@ In this section, you should list any terms that are used in the document that ma
   * **A program that allows the user to communicate with a computer**
 * **JavaScript:**
   * **A programming language used to create interactive effects on web browsers**
+ * **Frontend:**
+  * **The part of an application that directly involves user interactions, aka what the user is able to see on the application**
+* **CSS:**
+  * **A stylesheet language that tells the browser how the HTML code must look**
+
+
