@@ -166,7 +166,7 @@ Our final project will be a website for a cake business where the customers can 
   * **Description:** As an admin, I need the website to show when and why a user cancels their order. Once the user submits their cancellation request I must be able to see the reason why they canceled and store it for feedback
 * **US-6**
   * **Type of User:** Customer
-  * **Description:** As a customer, if I have any specific instructions or customizations that are not available in the given optons, I want the website to provide a text-box where I can specifty exactly what I want
+  * **Description:** As a customer, if I have any specific instructions or customizations that are not available in the given optons, I want the website to provide a text-box where I can specify exactly what I want
   
 
 ## Glossary
