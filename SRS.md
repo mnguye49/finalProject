@@ -97,6 +97,7 @@ In this section, you should list any constraints that you have for the project. 
 * Getting the authentication process to work, checking if a pre-existing email is entered into the system and the backend of the system remebering to store and remeber any information entered.
 * Some parts of the code can be hard to understand.
 * Trying to work around the schedules of some of the group members.
+* Due to the limited amount of time to work, many of non-database features such as customization may not be implemated until very late into the develpment stages.
 
 ## Use Cases
 
