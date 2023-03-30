@@ -51,7 +51,7 @@ Each group member must supply at least three functional requirements for the pro
   * **Testing:** A short description of how the requirement can be tested. This should be a single sentence that describes how the requirement can be tested.
 
 * **REQ-1:** A unique identifier for the requirement. This should be a number that is unique across the entire document (something like REQ-1, REQ-2, etc. but be sure to replace the word `ID` with the unique identifier).
-  * **Description:** The user must be able to place an order.
+  * **Description:** The user must be able to place an order for a cake.
   * **Type:** Functional.
   * **Priority:** 1.
   * **Rationale:** It is the main service that is to be provided.
