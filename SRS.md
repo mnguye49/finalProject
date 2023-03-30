@@ -84,6 +84,27 @@ Each group member must supply at least three functional requirements for the pro
   * **Rationale:** If any of the required info's not entered, the order will be incomplete.
   * **Testing:** We can fill out a form but leave out any required information. If we try to proceed with the order, a prompt would tell us that some information is missing.
 
+* **REQ-7:**
+  * **Description:** The website should be organized and inlcude sections such as a menu, pricing, special ordering and contact information sections
+  * **Type:** Functional
+  * Priority: 4
+  * **Rationale:** This will ensure that the website is easy to navigate and that users are able to find exactly what they need. 
+  * **Testing:** We can have a third-party (someone other than our group) use the website and provide feedback
+
+* **REQ-8:** 
+  * **Description:** The user must be able to cancel their order within one day of placing it. 
+  * **Type:** Functional
+  * **Rationale:** This will ensure that customers can cancel their orders and get a refund. However, if the order has already been processes and is being made they shouldn't be able to cancel it so putting a one day time limit is important
+  * **Testing:** 
+
+* **REQ-9:**
+  * **Description:** The website must send the a reciept to the customer with order details and a tracking number and an estimaed date of arrival.
+  * **Type:** Functional
+  * **Rationale:** This is to make sure the user knows when they can expect their order to arrive and have time to cancel or edit their order if they notice
+  * **Testing:** Use a email account meant for testing to place and order and ensure 
+
+
+
 
 ## Constraints
 
@@ -95,6 +116,8 @@ In this section, you should list any constraints that you have for the project. 
 * Some parts of the code can be hard to understand.
 * Trying to work around the schedules of some of the group members.
 * Due to the limited amount of time to work, many of non-database features such as customization may not be implemated until very late into the develpment stages.
+* Due to the high amount of customiablity that is available to users, there is more room for error
+* 
 
 ## Use Cases
 
