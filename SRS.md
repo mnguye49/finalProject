@@ -34,9 +34,6 @@ When a change is made to the document, a new revision should be created. The rev
 
 ## Introduction
 
-In this section, you should give a brief overview of what your project will be. Describe the software system you are building and what problems it solves. You should also give a short description of the stakeholders (users of the system) and what their needs are. There is no set formatting requirement, but you should maintain a consistent structure across future sections. Not all members must contribute to this section. 
-
-
 Our final project will be a website for a cake business where the customers can order and customise their own cakes that can be delivered to their homes and other locations. The website will be created using Python and Javascript for the code and have Flask be used for a framework.  Due to the internet evolving, more and more businesses are adding their services onto online platforms in order to expand. In addition, some customers may not have a means of transportation for reasons and may need their goods to be delivered to them. Users should be able to order a cake on the website, customize it if they want and after paying for it and then be able to choose if they want to pick it up in person or have it delivered.
 
 ## Requirements
@@ -85,7 +82,7 @@ Each group member must supply at least three functional requirements for the pro
   * **Type:** Functional
   * **Priority:** 1
   * **Rationale:** If any of the required info's not entered, the order will be incomplete.
-  * **Testing:** We can fill out a form but leave out any required info. If we try to proceed with the order, a prompt would tell us that some info is missing.
+  * **Testing:** We can fill out a form but leave out any required information. If we try to proceed with the order, a prompt would tell us that some information is missing.
 
 
 ## Constraints
@@ -94,7 +91,7 @@ In this section, you should list any constraints that you have for the project. 
 
 * Due to some group members having limited knowledge of Html and Javascript, it may take them some time to get the website to look and function like intended.
 * Getting the rewards system to work considering that it adds additional information that has to be processed (like how many orders are needed for the next reward) and how to have the user's name already filled in on the order form.
-* Getting the authentication process to work, checking if a pre-existing email is entered into the system and the backend of the system remebering to store and remeber any information entered.
+* Getting the authentication process to work, checking if a pre-existing email is entered into the system and the backend of the system remembering to store and remember any information entered.
 * Some parts of the code can be hard to understand.
 * Trying to work around the schedules of some of the group members.
 * Due to the limited amount of time to work, many of non-database features such as customization may not be implemated until very late into the develpment stages.
