@@ -21,6 +21,7 @@ When a change is made to the document, a new revision should be created. The rev
 | 1.0 | 03/28/23 | Worked on requirements | [Tan Nguyen](mailto:tnguy241@uncc.edu) | [Tan Nguyen](mailto:tnguy241@uncc.edu) |
 | 1.0 | 03/29/23 | Worked on filling in my required amount of information for each section | [Thi Nguyen](mailto:mnguye49@uncc.edu) | [Thi Nguyen](mailto:mnguye49@uncc.edu) |
 | 1.0 | 03/29/23 | Filled out required amount of info for each section | [Tan Nguyen](mailto:tnguy241@uncc.edu) | [Tan Nguyen](mailto:tnguy241@uncc.edu) |
+| 1.0 | 03/30/23 | Worked on intro and definitions | [Thi Nguyen](mailto:mnguye49@uncc.edu) | [Thi Nguyen](mailto:mnguye49@uncc.edu) |
 
 ## Table of Contents
 
@@ -36,7 +37,7 @@ When a change is made to the document, a new revision should be created. The rev
 In this section, you should give a brief overview of what your project will be. Describe the software system you are building and what problems it solves. You should also give a short description of the stakeholders (users of the system) and what their needs are. There is no set formatting requirement, but you should maintain a consistent structure across future sections. Not all members must contribute to this section. 
 
 
-Our final project will be a website for a cake business where the customers can order and customise their own cakes that can be delivered to their homes and other locations. Due to the internet evolving, more and more businesses are adding their services onto online platforms in order to expand. In addition, some customers may not have a means of transportation for reasons and may need their goods to be delivered to them.
+Our final project will be a website for a cake business where the customers can order and customise their own cakes that can be delivered to their homes and other locations. The website will be created using Python and Javascript for the code and have Flask be used for a framework.  Due to the internet evolving, more and more businesses are adding their services onto online platforms in order to expand. In addition, some customers may not have a means of transportation for reasons and may need their goods to be delivered to them. Users should be able to order a cake on the website, customize it if they want and after paying for it and then be able to choose if they want to pick it up in person or have it delivered.
 
 ## Requirements
 
@@ -73,14 +74,12 @@ Each group member must supply at least three functional requirements for the pro
   * **Priority:** 1
   * **Rationale:** So that payments can processed properly, the business gets paid for its work,  and so that all deliveries arrive at the correct location.
   * **Testing:** After placing an order, we should expect for a form to appear asking the user for their information and if any of the required information is missing, the site should not continue with the order until it is filled in.
-
 * **REQ-5:**
   * **Description:** The website's backend should be able to store the user's account information into a database system and remember it when a user tries to log in.  
   * **Type:** Functional
   * **Priority:** 2
   * **Rationale:** So that users can properly log into their accounts and the website can keep track of who is ordering in order to give rewards and so that no repeat emails are in the database.
   * **Testing:** We can try making an account with using the same email as another account to see if we are allowed to proceed with the registration or not. If the program is working properly we should get a prompt stating that the email is already being used and to use a different one.
-
 * **REQ-6:**
   * **Description:** The website must check if all required info is entered into the form provided.
   * **Type:** Functional
@@ -155,13 +154,19 @@ In this section, you should list user stories for the project. User stories are 
 
 In this section, you should list any terms that are used in the document that may not be immediately obvious to a naive reader. Each group member must supply at least one term. Each term should be written in the following format:
 
+* **Python:**
+  * **A programming language released in 1991 that is focused on user readability and is mainly used for website and software development as well as data analysis and machine learning.**
+* **Flask:**
+  * **A framework written in Python that allows for the development of web applications.** 
+* **Framework:** 
+  * **A set of tools and libraries used to help with software development.**
 * **Authentication:** 
   * **The process of verifying the identity of a user** 
-* **Backend** 
+* **Backend:** 
   * **Part of an application, program, or software system that allows for it to operate and cannot be accessed by users; it is often used for storing and processing data.** 
-* **HTML (Hypertext Markup Language)**
+* **HTML (Hypertext Markup Language):**
   * **A system for tagging text files to achieve effects on webpages**
-* **Interface**
+* **Interface:**
   * **A program that allows the user to communicate with a computer**
-* **JavaScript**
+* **JavaScript:**
   * **A programming language used to create interactive effects on web browsers**
