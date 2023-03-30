@@ -20,6 +20,7 @@ When a change is made to the document, a new revision should be created. The rev
 | 1.0 | 03/28/23 | Worked on intro and requirements | [Thi Nguyen](mailto:mnguye49@uncc.edu) | [Thi Nguyen](mailto:mnguye49@uncc.edu) |
 | 1.0 | 03/28/23 | Worked on requirements | [Tan Nguyen](mailto:tnguy241@uncc.edu) | [Tan Nguyen](mailto:tnguy241@uncc.edu) |
 | 1.0 | 03/29/23 | Worked on filling in my required amount of information for each section | [Thi Nguyen](mailto:mnguye49@uncc.edu) | [Thi Nguyen](mailto:mnguye49@uncc.edu) |
+| 1.0 | 03/29/23 | Filled out required amount of info for each section | [Tan Nguyen](mailto:tnguy241@uncc.edu) | [Tan Nguyen](mailto:tnguy241@uncc.edu) |
 
 ## Table of Contents
 
@@ -119,7 +120,15 @@ In this section, you should list use cases for the project. Use cases are a thor
   * **Preconditions:** The user must have a valid email account and not be logged in before they can register for a rewards account.
   * **Postconditions:** After the user successfully registers, they must have a rewards account that they can log in and out of. In future orders, they must also receive the rewards promised to them after a certain amount of orders or money spent. The website must have the user's information in the system so that it can verify who the said user is.
 * **UC-3**
-  * **Description:** The user wants to customize their order. They can choose what flavor of cake and what type of frosting they want. The user is sent to a page that allows them to choose which fillings and toppings they want on their cake.
+  * **Description:** The user wants to customize their order. They can choose what flavor of cake and what type of frosting they want. The user is sent to a page that allows them to choose which fillings and toppings they want on their cake. The website will notify if the user wants to add a message on the cake and show a preview of the finished product.
+  * **Actors:** Customer/User and Website
+  * **Preconditions:** The user must be on the website in order for customization of their cake.
+  * **Postconditions:** After customizing their cake, the user will be able to see the final product and the final price.
+* **UC-4**
+  * **Description:** The user wants to pick up their order. They can choose to pick up at the nearest shop and enter the state they live in. The website searches for any nearby locations in that state and returns them to the page. The user chooses which shop they wanted and the order will be delivered.
+  * **Actors:** Customer/User, Workers, and Website
+  * **Preconditions:** The user must be on the website and fill out their order and payment info. The user then selects to pick up their order.
+  * **Postconditions:** After selecting the location to pick up their order, the user will receive their order when they arrive. The workers at the location will receive the order and start making it for the customer. The customer will be notified that the order has be sent to the location of the shop.
 
 ## User Stories
 
@@ -135,6 +144,12 @@ In this section, you should list user stories for the project. User stories are 
 * **US-2** 
   * **Type of User:** Admin
   * **Description:** As a website admin, I need for the website to be able to verify the information provided by any user who wants a rewards account as well as store it properly. This is so that when accounts are made, users are able to log into them and the information remains private.
+* **US-3**
+  * **Type of User:** Customer
+  * **Description:** As a customer, I want to create an account to get some rewards and to see any previous orders that I have made.
+* **US-4**
+  * **Type of User:** Admin
+  * **Description:** As an admin, I need the website to show the user what their cake would look like after they customize it so that they can get an accurate representation of what their cake would be like and if they want to make any changes.
 
 ## Glossary
 
@@ -144,3 +159,9 @@ In this section, you should list any terms that are used in the document that ma
   * **The process of verifying the identity of a user** 
 * **Backend** 
   * **Part of an application, program, or software system that allows for it to operate and cannot be accessed by users; it is often used for storing and processing data.** 
+* **HTML (Hypertext Markup Language)**
+  * **A system for tagging text files to achieve effects on webpages**
+* **Interface**
+  * **A program that allows the user to communicate with a computer**
+* **JavaScript**
+  * **A programming language used to create interactive effects on web browsers**
