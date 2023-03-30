@@ -75,6 +75,7 @@ Each group member must supply at least three functional requirements for the pro
 
 * **REQ-5:**
   * **Description:** The website's backend should be able to store the user's account information into a database system and remember it when a user tries to log in.  
+  * **Type:** Functional
   * **Priority:** 2
   * **Rationale:** So that users can properly log into their accounts and the website can keep track of who is ordering in order to give rewards and so that no repeat emails are in the database.
   * **Testing:** We can try making an account with using the same email as another account to see if we are allowed to proceed with the registration or not. If the program is working properly we should get a promt stating that the email is already being used and to use a different one.
