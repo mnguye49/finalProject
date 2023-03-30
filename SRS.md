@@ -19,6 +19,7 @@ When a change is made to the document, a new revision should be created. The rev
 | 1.0 | 03/22/23 | Initial draft | [David Gary](mailto:dgary9@uncc.edu) | [David Gary](mailto:dgary@uncc.edu) |
 | 1.0 | 03/28/23 | Worked on intro and requirements | [Thi Nguyen](mailto:mnguye49@uncc.edu) | [Thi Nguyen](mailto:mnguye49@uncc.edu) |
 | 1.0 | 03/28/23 | Worked on requirements | [Tan Nguyen](mailto:tnguy241@uncc.edu) | [Tan Nguyen](mailto:tnguy241@uncc.edu) |
+| 1.0 | 03/29/23 | Worked on filling in my required amount of information for each section | [Thi Nguyen](mailto:mnguye49@uncc.edu) | [Thi Nguyen](mailto:mnguye49@uncc.edu) |
 
 ## Table of Contents
 
@@ -45,6 +46,7 @@ Each group member must supply at least three functional requirements for the pro
   * **Priority:** The priority of the requirement. This should be a number between 1 and 5, with 1 being the highest priority and 5 being the lowest priority.
   * **Rationale:** A short description of why the requirement is important. This should be a single sentence that describes why the requirement is important.
   * **Testing:** A short description of how the requirement can be tested. This should be a single sentence that describes how the requirement can be tested.
+
 * **REQ-1:** A unique identifier for the requirement. This should be a number that is unique across the entire document (something like REQ-1, REQ-2, etc. but be sure to replace the word `ID` with the unique identifier).
   * **Description:** The user must be able to place an order.
   * **Type:** Functional.
@@ -62,7 +64,7 @@ Each group member must supply at least three functional requirements for the pro
   * **Type:** Non-Functional
   * **Priority:** 3
   * **Rationale:** This is for user privacy and if an account is made it can provide rewards (such as a discount) to the user for multiple orders.
-  * **Testing: We create an account for testing purposes and check if we can still log into said account after logging out of it.
+  * **Testing:** We create an account for testing purposes and check if we can still log into said account after logging out of it.
 * **REQ-4:**.
   * **Description:** After placing an order, the user should be able to enter in their payment information (and if it is a delivery order, the address as well) and the website should process it.
   * **Type:** Functional
@@ -70,9 +72,20 @@ Each group member must supply at least three functional requirements for the pro
   * **Rationale:** So that payments can processed properly, the business gets paid for its work,  and so that all deliveries arrive at the correct location.
   * **Testing:** After placing an order, we should expect for a form to appear asking the user for their information and if any of the required information is missing, the site should not continue with the order until it is filled in.
 
+* **REQ-5:**
+  * **Description:** The website's backend should be able to store the user's account information into a database system and remember it when a user tries to log in.  
+  * **Priority:** 2
+  * **Rationale:** So that users can properly log into their accounts and the website can keep track of who is ordering in order to give rewards and so that no repeat emails are in the database.
+  * **Testing:** We can try making an account with using the same email as another account to see if we are allowed to proceed with the registration or not. If the program is working properly we should get a promt stating that the email is already being used and to use a different one.
+
+
 ## Constraints
 
 In this section, you should list any constraints that you have for the project. Each group member must supply at least two constraints. These can be constraints on the project itself, the software system, or the stakeholders. Constraints can be anything that limits the scope of the project. For example, that this project's template code is written using Flask and Python constitutes a constraint on the backend of the project. Constraints can also be things like the required timeline of the project. Be creative.
+
+* Due to some group members having limited knowledge of Html and Javascript, it may take them some time to get the website to look and function like intended.
+* Getting the rewards system to work considering that it adds additional information that has to be processed (like how many orders are needed for the next reward) and how to have the user's name already filled in on the order form.
+* Getting the authentication process to work, checking if a pre-existing email is entered into the system and the backend of the system remebering to store and remeber any information entered.
 
 ## Use Cases
 
@@ -84,6 +97,17 @@ In this section, you should list use cases for the project. Use cases are a thor
   * **Preconditions:** A list of the preconditions for the use case. This should be a list of the preconditions for the use case, which are the conditions that must be met before the use case can be executed. Continuing with the restaurant example, the customer must have money in their wallet and the cashier must be logged in to the system before the use case of ordering food can be executed.
   * **Postconditions:** A list of the postconditions for the use case. This should be a list of the postconditions for the use case, which are the conditions that must be met after the use case has been executed. Continuing with the restaurant example, the customer must have their food and the cashier must have the customer's money after the use case of ordering food has been executed.
 
+* **UC-1** 
+  * **Description:** The user makes an order by clicking on a button/link that takes them to a page where they can choose from a preset cake or create their own custom cake. After choosing their cake, the website then takes them to a page with a form where they have to select the date of the pickup/delivery and if they are not logged into a rewards account, enter in a name for the order. Once that information is filled in, they are taken to a page where they must fill in their debit/credit card information. If any of the required infomation needed is missing from the forms, the user cannot proceed until it is filled in. The website then processes the payment and makes sure that the infomation entered is valid. Once the payment is processed, the user can choose to either pick up their cake in person or have it delivered to a specified location. If they choose to pick it up in person, they are taken to a page where they can locate the closest store location near them to have it made. If they choose to have it delivered, they are instead taken to a form where they are required to fill in the address in which the cake is to be delivered and an approximate time that it should arrive. After filling in all of the required information, the user's order is then complete.
+  * **Actors:** Customer/User and Website
+  * **Preconditions:** The user must be on the website, in the case of allergies, have an idea of what the cake can and can't have and have a method of payment before they can place an order. The user must also fill in all of the required information in the forms in order to proceed.
+  * **Postconditions:** After an order is placed, the customer must have a message stating that their order placed and a receipt and eventually receive their cake. The business must have recieved confirmation that an order has been placed, payment for said order as well as the name placed under it and the date and time it has to be finished and if it is a delivery, the location of the delivery. 
+* **UC-2** 
+  * **Description:** The user wants to create a rewards account to get special perks. The user clicks a link provided on the website that takes them to a page where they can register. Once on the page, they have to enter in their name as well as a valid email account and a strong password. If the email provided is already in the system, the website must notify the user about this and prompt them to input a different email address. In addition, the user cannot proceed until they have filled in all of the required information. Once the information entered is confirmed to be valid, the website's backend must store it into the system and keep it there. The user is then taken to a login screen where they can enter in the information to log into their newly created account.
+  * **Actors:** Customer/User and backend of the website.
+  * **Preconditions:** The user must have a valid email account and not be logged in before they can register for a rewards account.
+  * **Postconditions:** After the user successfully registers, they must have a rewards account that they can log in and out of. In future orders, they must also receive the rewards promised to them after a certain amount of orders or money spent. The website must have the user's information in the system so that it can verify who the said user is.
+
 ## User Stories
 
 In this section, you should list user stories for the project. User stories are a short description of how a user will be interacting with the system. Each group member must supply at least two user stories. Each user story should be written in the following format:
@@ -92,9 +116,18 @@ In this section, you should list user stories for the project. User stories are 
   * **Type of User:** The type of user that the user story is for. This should be a single word that describes the type of user. For example, a user story for a customer might be `Customer` and a user story for an administrator might be `Admin`.
   * **Description:** A description of the user story that gives a narrative from that user's perspective. This can be any length, but it must paint the picture of what the user wants to do, how they intend to do it, why they want to, and what they expect to happen.
 
+* **US-1:**
+  * **Type of User:** Customer
+  * **Description:** As a customer, I want to be able to customize my cake order not only so it has all of my favorite ingredients but also to account for any allergies that my guests may have. I also expect that the interface to do so is easy to use and has clear details about the final outcome so that I know that I am getting the result I want.
+* **US-2** 
+  * **Type of User:** Admin
+  * **Description:** As a website admin, I need for the website to be able to verify the information provided by any user who wants a rewards account as well as store it properly. This is so that when accounts are made, users are able to log into them and the information remains private.
+
 ## Glossary
 
 In this section, you should list any terms that are used in the document that may not be immediately obvious to a naive reader. Each group member must supply at least one term. Each term should be written in the following format:
 
-* **Term:** The term that is being defined. This should be a single word or phrase that is being defined.
-  * **Definition:** A definition of the term. This should be a short description of the term that is being defined. This should be a single sentence that describes the term.
+* **Authentication:** 
+  * **The process of verifying the identity of a user** 
+* **Backend** 
+  * **Part of an application, program, or software system that allows for it to operate and cannot be accessed by users; it is often used for storing and processing data.** 
