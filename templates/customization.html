@@ -1,1 +1,49 @@
-<h1>
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h2> Fillings and Toppings </h2>
+
+<p>Choose the first filling you want:</p>
+
+<form>
+ <input type="radio" id="frosting" name="filling1" value="frosting">
+ <label for="frosting">More Frosting</label><br>
+ <input type="radio" id="custard" name="filling1" value="custard">
+ <label for="custard">Custard</label><br>
+ <input type="radio" id="sStrawberries" name="filling1" value="sStrawberries">
+ <label for="sStrawberries">Sliced Strawberries</label><br>
+ <input type="radio" id="sJam" name="filling1" value="sJam">
+ <label for="sJam">Strawberry Jam</label><br>
+ <input type="radio" id="lCurd" name="filling1" value="lCurd">
+ <label for="lCurd">Lemon Curd</label><br>
+ <input type="radio" id="cGanache" name="filling1" value="cGanache">
+ <label for="cGanache">Chocolate Ganache</label><br>
+ <input type="radio" id="nutella" name="filling1" value="nutella">
+ <label for="nutella">Nutella</label><br>
+ <input type="radio" id="other" name="filling1" value="other">
+ <label for="other">Other:</label>
+ <input type="text" name=altOption"><br><br>
+
+ <label for="newFilling">Choose the Second filling you want:</label><br><br>
+
+ <input type="radio" id="noMore" name="filling2" value="noMore">
+ <label for="noMore">None</label><br>
+ <input type="radio" id="extraFrosting" name="filling2" value="extraFrosting">
+ <label for="extraFrosting">More Frosting</label><br>
+ <input type="radio" id="extraCustard" name="filling2" value="extraCustard">
+ <label for="extraCustard">Custard</label><br>
+ <input type="radio" id="extraStrawberries" name="filling2" value="extraStrawberries">
+ <label for="extraStrawberries">Sliced Strawberries</label><br>
+ <input type="radio" id="extraJam" name="filling2" value="extraJam">
+ <label for="extraJam">Strawberry Jam</label><br>
+ <input type="radio" id="extraCurd" name="filling2" value="extraCurd">
+ <label for="extraCurd">Lemon Curd</label><br>
+ <input type="radio" id="extraGanache" name="filling2" value="extraGanache">
+ <label for="extraGanache">Chocolate Ganache</label><br>
+ <input type="radio" id="extraNutella" name="filling2" value="extraNutella">
+ <label for="nutella">Nutella</label><br>
+ <input type="radio" id="other2" name="filling2" value="other2">
+ <label for="other2">Other:</label>
+ <input type="text" name=altOption2"><br><br>
+</form>
