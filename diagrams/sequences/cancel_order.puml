@@ -1,0 +1,10 @@
+@startuml cancelattion
+actor Customer
+boundary System as system
+Customer -> system: cancellation_request
+activate system
+system --> Customer: prompt for cancellation reason
+Customer -> system: send_reason
+system --> Customer: send cancellation confirmation and return money
+deactivate system
+@enduml
