@@ -1,0 +1,41 @@
+@startuml class
+title Core
+class "Order" as store.core.order.Order {
+    orders:dict
+    flavor: str
+    frosting: str
+    filling1: str
+    filling2: str
+    price: float
+    toppings[]: list
+    getFlavor()
+    setFlavor(str)
+    getFrosting()
+    setFrosting(str)
+    getFilling1()
+    setFilling1(str)
+    getFilling2()
+    setFilling2(str)
+    getPrice()
+    setPrice(float)
+    getToppings()
+    setToppings(list)
+    submit_order(order) -> None
+    create_order(cake: str, frosting: str, fillings, toppings) -> dict
+    getSuggestions(suggestion: str)
+    computeTotal()
+    applyDiscount()
+    processPayment()
+    goToPickup()
+    goToDelivery()
+}
+class Account {
+    name:str
+    ID: str
+    toNextReward: int
+    addOrder(db: Database) -> None
+    cancelOrder() -> None
+    checkOrderHistory()->list
+    calculateNewRewardCountdown()->int
+}
+@enduml

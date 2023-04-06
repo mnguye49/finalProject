@@ -1,0 +1,13 @@
+@startuml package
+title Core
+package Core
+package Order
+package Payment
+package Shipping
+package Database
+Core -> Order
+Order -> Payment
+Order -> Database
+Database -> Order
+Payment -> Shipping
+@enduml 

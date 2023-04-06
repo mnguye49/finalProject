@@ -1,0 +1,8 @@
+@startuml package
+title Core
+package Core
+package Order
+package Payment
+package Shipping
+package Database
+@enduml

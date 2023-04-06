@@ -1,0 +1,5 @@
+@startuml class
+title Core
+class Order
+class Account
+@enduml
