@@ -1,0 +1,20 @@
+@startuml customer
+left to right direction
+actor Customer
+rectangle "System" as system {
+  (Register)
+  (Get Premade Cake)
+  (Get Custom Cake)
+  (In-Store Pickup)
+  (Delivery)
+  (Send Feedback)
+}
+
+Customer -> (Register)
+Customer -> (Get Premade Cake)
+Customer -> (Get Custom Cake)
+Customer -> (In-Store Pickup)
+Customer -> (Delivery)
+Customer -> (Send Feedback)
+
+@enduml
