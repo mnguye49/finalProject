@@ -1,6 +1,6 @@
 @startuml
 title Authentication
-package Authentication {}
+package Testing {}
 package Registration {}
 package Login{}
 package Database{}
