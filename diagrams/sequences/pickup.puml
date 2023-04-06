@@ -1,0 +1,13 @@
+@startuml pickup
+actor Customer
+boundary "System" as system
+control "Pickup" as pick
+Customer -> system: pickup 
+activate system
+system -> pick: order(flavor, frosting, filling1, filling2, toppings, price, date, time)
+activate pick
+pick --> system: order_confirmation(location)
+deactivate pick
+system -> system: redirect to confirmation screen
+deactivate system
+@enduml
