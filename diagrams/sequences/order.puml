@@ -1,0 +1,18 @@
+@startuml premade
+actor Customer
+boundary "System" as system
+control "Set Recipe Database" as made
+control "Payment" as pay
+Customer -> system: 
+activate system
+system -> made: request to go to database
+activate made
+activate pay
+made -> pay: money(price)
+pay --> system: payment(total)
+deactivate pay
+made --> system: order(flavor, frosting, filling1, filling2, toppings, price, date, time)
+deactivate made
+system -> system: redirect to receiving method screen
+deactivate system
+@enduml
