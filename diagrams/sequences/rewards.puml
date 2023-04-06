@@ -1,0 +1,13 @@
+@startuml rewards
+actor Customer
+boundary "System" as system
+control "Rewards" as rewards
+Customer -> system: see rewards
+activate system
+system -> rewards: request to see future rewards
+activate rewards
+rewards --> system: details about next reward(s)
+deactivate rewards
+system -> system: redirect to screen displaying future rewards
+deactivate system
+@enduml
