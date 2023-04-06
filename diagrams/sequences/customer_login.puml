@@ -9,4 +9,5 @@ activate auth
 auth --> system: True
 deactivate auth
 system -> system: Go Back to Home Page
+deactivate system
 @enduml
