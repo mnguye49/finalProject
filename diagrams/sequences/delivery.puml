@@ -9,5 +9,6 @@ activate deliver
 deliver --> system: order_confirmation(location)
 deactivate deliver
 system -> system: redirect to confirmation screen
+system --> Customer: confirmation
 deactivate system
 @enduml
