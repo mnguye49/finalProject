@@ -1,0 +1,17 @@
+
+@startuml package
+title Authentication
+package Authentication {}
+package Registration {}
+package Login{}
+package Database{}
+
+
+Registration -> Database: <<access>>
+Login --> Database: <<access>>
+Database --> Login: <<access>>
+Authentication -> Database: <<access>>
+Database-> Authentication: <<access>>
+Database -> Registration: <<access>>
+Login -> Authentication: <<access>>
+@enduml
