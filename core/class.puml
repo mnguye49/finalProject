@@ -8,6 +8,8 @@ class "Order" as store.core.order.Order {
     filling2: str
     price: float
     toppings[]: list
+    date: str
+    time: str
     getFlavor()
     setFlavor(str)
     getFrosting()
