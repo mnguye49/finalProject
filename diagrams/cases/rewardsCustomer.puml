@@ -1,0 +1,28 @@
+@startuml rewardscustomer
+left to right direction
+actor RewardsCustomer
+rectangle "System" as system {
+  (Login)
+  (Check Order History)
+  (Check Rewards)
+  (Get Premade Cake)
+  (Get Custom Cake)
+  (In-Store Pickup)
+  (Delivery)
+  (Cancel Order)
+  (Send Feedback)
+  (Logout)
+}
+
+RewardsCustomer -> (Login)
+RewardsCustomer -> (Check Order History)
+RewardsCustomer -> (Check Rewards)
+RewardsCustomer -> (Get Premade Cake)
+RewardsCustomer -> (Get Custom Cake)
+RewardsCustomer -> (In-Store Pickup)
+RewardsCustomer -> (Delivery)
+RewardsCustomer -> (Cancel Order)
+RewardsCustomer -> (Send Feedback)
+RewardsCustomer -> (Logout)
+
+@enduml
