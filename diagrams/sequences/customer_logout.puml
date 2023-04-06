@@ -1,0 +1,8 @@
+@startuml logout
+actor Customer
+boundary System as system
+Customer -> system: logout_request
+activate system
+system -> system: Go Back to Login Screen
+deactivate system
+@enduml
