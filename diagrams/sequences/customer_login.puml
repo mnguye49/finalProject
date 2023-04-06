@@ -1,0 +1,12 @@
+@startuml register
+actor Customer
+boundary System as system
+control Authentication as auth
+Customer -> system: Login
+activate system
+system -> auth: login_pipeline(username, password)
+activate auth
+auth --> system: True
+deactivate auth
+system -> system: Go Back to Home Page
+@enduml
