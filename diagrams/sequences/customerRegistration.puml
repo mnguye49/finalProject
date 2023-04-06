@@ -1,0 +1,18 @@
+@startuml register
+actor Customer
+boundary "System" as system
+control "Registration" as reg 
+control "Verification" as veri
+Customer -> system: register 
+activate system
+system -> reg: registration_pipeline(email, username, password)
+activate reg
+activate veri
+reg -> veri: verification_pipeline(email)
+veri --> reg: True
+deactivate veri
+reg -> system: new_account(username, password)
+deactivate reg
+system -> system: redirect to login
+deactivate system
+@enduml
