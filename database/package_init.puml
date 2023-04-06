@@ -1,0 +1,10 @@
+@startuml package
+title Database
+package CakeDatabase{}
+package OrderDatabase{}
+package Order{}
+package Payment{}
+package User{}
+
+
+@enduml

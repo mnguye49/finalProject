@@ -1,0 +1,16 @@
+@startuml package
+title Database
+package CakeDatabase{}
+package OrderDatabase{}
+package Order{}
+package Payment{}
+package User{}
+
+
+OrderDatabase --> Order: << access if user has rewards account>>
+Order -> Payment: <<access>>
+Order -> CakeDatabase: <<access>>
+Payment -> Order: <<access>>
+User -> Order: <<access>>
+User -> OrderDatabase: <<access if logged in>>
+@enduml
