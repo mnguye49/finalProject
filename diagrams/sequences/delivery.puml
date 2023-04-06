@@ -1,0 +1,13 @@
+@startuml delivery
+actor Customer
+boundary "System" as system
+control "Delivery" as deliver
+Customer -> system: delivery
+activate system
+system -> deliver: order(flavor, frosting, filling1, filling2, toppings, price, date, time)
+activate deliver
+deliver --> system: order_confirmation(location)
+deactivate deliver
+system -> system: redirect to confirmation screen
+deactivate system
+@enduml
