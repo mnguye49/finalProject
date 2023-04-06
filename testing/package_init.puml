@@ -1,8 +1,11 @@
 @startuml
-title Authentication
-package Testing {}
-package Registration {}
-package Login{}
-package Database{}
+title Testing
+package Testers {}
+package Tests {}
+package TestCases {}
+package Website {}
 
+Testers --> Tests
+Tests --> TestCases
+TestCases --> Website
 @enduml
