@@ -1,0 +1,11 @@
+@startuml classes
+set namespaceSeparator none
+class "AccountDatabase" as store.database.session.AccountDatabase #aliceblue {
+  
+}
+
+class "CakeDatabase" as store.database.session.CakeDatabase #aliceblue {
+
+}
+
+@enduml

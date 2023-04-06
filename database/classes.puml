@@ -1,0 +1,18 @@
+@startuml classes
+set namespaceSeparator none
+class "AccountDatabase" as store.database.session.AccountDatabase #aliceblue {
+  getOrders() -> list
+  checkRewards() -> int
+}
+
+class "CakeDatabase" as store.database.session.CakeDatabase #aliceblue {
+  Cake: dict
+  quantity: int
+  getInventory(cake: Cake)-> int
+  restock() -> None
+  updateInventory(quantity: num, cake: Cake) -> None
+  inStock(cake: Cake) -> bool
+  selectCake(cake: Cake) -> None
+}
+
+@enduml
