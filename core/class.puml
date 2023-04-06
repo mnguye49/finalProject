@@ -22,6 +22,8 @@ class "Order" as store.core.order.Order {
     setToppings(list)
     getDate()
     setDate(str)
+    getTime()
+    setTime(str)
     submit_order(order) -> None
     create_order(cake: str, frosting: str, fillings, toppings) -> dict
     getSuggestions(suggestion: str)
