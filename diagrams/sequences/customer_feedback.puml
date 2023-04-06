@@ -1,0 +1,9 @@
+@startuml feedback
+actor Customer
+boundary System as system
+Customer -> system: reply
+activate system
+system --> Customer: confirmation
+system -> system: Go Back to Home Page
+deactivate system
+@enduml
