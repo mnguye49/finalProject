@@ -1,0 +1,13 @@
+@startuml history
+actor Customer
+boundary "System" as system
+control "Order History" as history
+Customer -> system: see previous orders
+activate system
+system -> history: request to access order history
+activate history
+history --> system: list of previous orders
+deactivate history
+system -> system: redirect to screen displaying previous orders
+deactivate system
+@enduml
