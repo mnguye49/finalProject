@@ -20,6 +20,8 @@ class "Order" as store.core.order.Order {
     setPrice(float)
     getToppings()
     setToppings(list)
+    getDate()
+    setDate(str)
     submit_order(order) -> None
     create_order(cake: str, frosting: str, fillings, toppings) -> dict
     getSuggestions(suggestion: str)
