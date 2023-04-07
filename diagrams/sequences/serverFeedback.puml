@@ -1,0 +1,8 @@
+@startuml feedback
+actor Server
+boundary System as system
+activate system
+system --> Server: send_feedback
+system -> system: redirect to home page
+deactivate system
+@enduml
