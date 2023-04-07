@@ -1,0 +1,22 @@
+@startuml server
+left to right direction
+actor Server
+rectangle System as system{
+ (Process)
+ (Payment)
+ (Store Login Data)
+ (Process Order)
+ (Send Receipt)
+ (Check Information)
+ (Process Information)
+ (Store Feedback)
+}
+Server --> (Process)
+Server --> (Payment)
+Server --> (Store Login Data)
+Server --> (Process Order)
+Server --> (Send Receipt)
+Server --> (Check Information)
+Server --> (Process Information)
+Server --> (Store Feedback)
+@enduml
