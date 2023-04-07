@@ -1,0 +1,28 @@
+@startuml processO
+
+boundary "Server" as system
+control "Order" as ord
+control "All Required" as require
+control "Payment" as pay
+control "Payment Verification" as pver
+
+activate system
+system -> ord: order request
+activate ord
+ord -> require : formInfo(order(flavor, frosting, filling1, filling2, toppings, price, date, time), name)
+activate require
+require --> ord: True
+deactivate require
+ord -> pay: money(price)
+activate pay
+pay -> pver : paymentInformation(cardNum, CVC)
+activate pver
+pver --> pay : True
+deactivate pver
+pay --> system: payment(total)
+deactivate pay
+ord --> system: order(flavor, frosting, filling1, filling2, toppings, price, date, time)
+deactivate ord
+system -> system: redirect to receiving method screen
+deactivate system
+@enduml
