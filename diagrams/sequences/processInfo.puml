@@ -1,0 +1,9 @@
+@startuml information
+actor Server
+boundary System as system
+Server -> system: process_information
+activate system
+system --> Server: send_information
+system -> system: redirect to next page
+deactivate system
+@enduml
