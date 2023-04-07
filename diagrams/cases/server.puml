@@ -2,8 +2,7 @@
 left to right direction
 actor Server
 rectangle System as system{
- (Process)
- (Payment)
+ (Process Payment)
  (Store Login Data)
  (Process Order)
  (Send Receipt)
@@ -11,8 +10,7 @@ rectangle System as system{
  (Process Information)
  (Store Feedback)
 }
-Server --> (Process)
-Server --> (Payment)
+Server --> (Process Payment)
 Server --> (Store Login Data)
 Server --> (Process Order)
 Server --> (Send Receipt)
