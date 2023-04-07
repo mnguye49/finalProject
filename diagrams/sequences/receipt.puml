@@ -1,0 +1,14 @@
+@startuml receipt
+actor Server
+boundary System as system
+control Receipt as receipt
+Server -> system: process_information
+activate system
+system -> receipt: send_information
+activate receipt
+receipt --> system: process_receipt
+deactivate receipt
+system --> Server: send_receipt
+system -> system: redirect to page to show receipt
+deactivate system
+@enduml
