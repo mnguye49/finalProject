@@ -1,0 +1,17 @@
+@startuml checkInfo
+
+boundary "Server" as system
+control "Form" as form
+control "All Required" as require
+activate system
+activate form
+form -> require: form data
+activate require
+require --> form: True
+deactivate require
+form --> system: form data
+deactivate form
+
+system -> system: redirect to next page
+deactivate system
+@enduml
