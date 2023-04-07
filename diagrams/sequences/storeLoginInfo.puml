@@ -1,0 +1,13 @@
+@startuml storeLogin
+
+boundary "System" as system
+database "loginInfo" as log
+
+activate system
+system -> log: login_pipeline(username, password)
+activate log
+log --> system: Information stored
+deactivate log
+system -> system: redirect to login screen
+deactivate system
+@enduml
