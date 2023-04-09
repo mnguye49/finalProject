@@ -3,16 +3,17 @@ from datetime import datetime
 from database.db import Database
 
 
-class UserSession:
+class Cake:
     """
-    UserSession is a class that represents a user's shopping session.
+    Order is a class that represents the cake the user wants.
 
     args:
         - username: The username of the user.
         - db: The database to use.
 
     attributes:
-        - username: The username of the user.
+        - flavor: The username of the user.
+        - frosting: the frosting they want on the cake
         - cart: A dictionary of dictionaries representing the items in the user's cart.
         - total_cost: The total cost of the user's cart.
         - date: The date of the user's session.
@@ -20,7 +21,7 @@ class UserSession:
     """
 
     def __init__(self, username: str, db: Database):
-        self.username = username
+        self.username = None
         self.total_cost = 0
         self.date = None
         self.db = db
@@ -115,6 +116,9 @@ class UserSession:
         self.date = datetime.now()
 
 
+class Order:
+    """
+    """
 class Sessions:
     """
     Sessions is a class that represents the collection of active sessions.
