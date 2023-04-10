@@ -2,10 +2,18 @@ from core.utils import calculate_total_cost
 from datetime import datetime
 from database.db import Database
 
+global CAKE
+CAKE = {
+    'flavor' = '',
+    'frosting' = '',
+    'filling_one' = '',
+    'filling_two = '',
+    'toppings' = []
+}
 
-class Cake:
+class Order:
     """
-    Order is a class that represents the cake the user wants.
+    Order is a class that represents the user's order.
 
     args:
         - username: The username of the user.
@@ -56,7 +64,7 @@ class Cake:
         """
         return id in self.cart
 
-    def add_new_item(self, id: str, name: str, price: int, quantity: int, discount: float = 0.0, tax_rate: float = 0.05) -> None:
+    def create_order() -> None:
         """
         Creates a new item to add to the user's cart.
 
@@ -71,6 +79,11 @@ class Cake:
         returns:
             - None
         """
+        flav = CAKE.get('flavor')
+        frost = CAKE.get('frosting')
+        fill_one = CAKE.get('filling_one')    
+        fill_two = CAKE.get('filling_two')
+        top = []
         self.cart[id] = {"name": name, "price": price, "quantity": quantity,
                          "discount": discount, "tax_rate": tax_rate}
 
@@ -115,10 +128,16 @@ class Cake:
         self.update_total_cost()
         self.date = datetime.now()
 
+class Cake:
+    
+    def __init__(self, flavor: str, frosting: str, filling_one: str, filling_two: str, toppings):
+        self.flavor = flavor
+        self.frosting = frosting
+        self.filling_one = filling_one
+        self.filling_two = filling_two
+        self.toppings = toppings
+    
 
-class Order:
-    """
-    """
 class Sessions:
     """
     Sessions is a class that represents the collection of active sessions.
