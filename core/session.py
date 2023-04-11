@@ -2,14 +2,6 @@ from core.utils import calculate_total_cost
 from datetime import datetime
 from database.db import Database
 
-global CAKE
-CAKE = {
-    'flavor' = '',
-    'frosting' = '',
-    'filling_one' = '',
-    'filling_two = '',
-    'toppings' = []
-}
 
 class Order:
     """
@@ -20,51 +12,20 @@ class Order:
         - db: The database to use.
 
     attributes:
-        - flavor: The username of the user.
-        - frosting: the frosting they want on the cake
-        - cart: A dictionary of dictionaries representing the items in the user's cart.
-        - total_cost: The total cost of the user's cart.
-        - date: The date of the user's session.
-        - db: The database to use.
+        - cake: An object containing the cake that the user ordered
+        - time: the frosting they want on the cake
+        - date: A dictionary of dictionaries representing the items in the user's cart.
+        - total_cost: The total cost of the order.
+        - date: The date the user wants their cake by
     """
 
-    def __init__(self, username: str, db: Database):
+    def __init__(self):
         self.username = None
-        self.total_cost = 0
+        self.total_cost = 0.0
+        self.time = None
         self.date = None
-        self.db = db
-        self.cart = self.empty_cart()
 
-    def empty_cart(self) -> dict:
-        """
-        Fills the cart dictionary with item ids and 0 quantities.
-
-        args:
-            - None
-
-        returns:
-            - A dictionary of dictionaries representing the items in the user's cart.
-        """
-        inventory = self.db.get_full_inventory()
-        new_cart = {}
-        for item in inventory:
-            new_cart[item["id"]] = {"name": item["item_name"], "price": item["price"], "quantity": 0,
-                                    "discount": 0, "tax_rate": 0}
-        return new_cart
-
-    def is_item_in_cart(self, id: str) -> bool:
-        """
-        Checks if an item is in the user's cart.
-
-        args:
-            - id: The id of the item.
-
-        returns:
-            - True if the item is in the user's cart, False otherwise.
-        """
-        return id in self.cart
-
-    def create_order() -> None:
+    def create_order(flavor, frosting, filling_1, filling_2, toppings) -> Cake:
         """
         Creates a new item to add to the user's cart.
 
@@ -79,13 +40,15 @@ class Order:
         returns:
             - None
         """
-        flav = CAKE.get('flavor')
-        frost = CAKE.get('frosting')
-        fill_one = CAKE.get('filling_one')    
-        fill_two = CAKE.get('filling_two')
+        flav = flavor
+        frost = frosting
+        fill_one = filling_1   
+        fill_two = filling_2
         top = []
-        self.cart[id] = {"name": name, "price": price, "quantity": quantity,
-                         "discount": discount, "tax_rate": tax_rate}
+        for each topping in toppings:
+            top.append(topping)
+        
+        new_Cake = new Cake(flav,frost,fill_one, fill_two,top)
 
     def update_item_quantity(self, id: str, change_to_quantity: int) -> None:
         """
@@ -136,6 +99,7 @@ class Cake:
         self.filling_one = filling_one
         self.filling_two = filling_two
         self.toppings = toppings
+    
     
 
 class Sessions:
