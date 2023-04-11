@@ -86,6 +86,23 @@ def check_password(password: str, salt: str, key: str) -> bool:
 
     return key == new_key
 
+def update_email(username: str, key: str, salt: str, email: str):
+    with open("authentication/passwords.txt", "r") as file:
+        lines=file.readlines()
+    with open("authentication/passwords.txt", "w") as file:
+        found_flag = False
+        for line in lines:
+            if line.split(":")[0] == username:
+                found_flag=True
+                file.write(f"{username}:{salt}:{key}:{email}")
+            else:
+                file.write(line)
+        if not found_flag:
+            file.write(f"\n{username}:{salt}:{key}:{email}")
+
+def check_email(email: str) -> bool:
+    email, new_email = email.strip(), new_email.strip()
+    return email == new_email
 
 def login_pipeline(username: str, password: str) -> bool:
     """
@@ -110,8 +127,8 @@ def login_pipeline(username: str, password: str) -> bool:
             return check_password(password, salt, key)
     return False
 
-
 def main():
+    email = input("enter email: ")
     password = input("enter password: ")
     salt, key = hash_password(password)
     print(f"Salt: {salt}")
