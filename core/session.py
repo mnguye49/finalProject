@@ -12,18 +12,21 @@ class Order:
         - db: The database to use.
 
     attributes:
+        - is_Custom: A bool determining if the user wants their cake custom ordered or not
         - cake: An object containing the cake that the user ordered
         - time: the frosting they want on the cake
         - date: A dictionary of dictionaries representing the items in the user's cart.
         - total_cost: The total cost of the order.
         - date: The date the user wants their cake by
+        - is_Delivery: a bool determining whether the user wants to have their cake delivered or picked up in person.
     """
 
     def __init__(self):
-        self.username = None
+        self.is_Custom = False
         self.total_cost = 0.0
         self.time = None
         self.date = None
+        self.is_Delivery = True
 
     def create_order(flavor, frosting, filling_1, filling_2, toppings) -> Cake:
         """
@@ -49,6 +52,7 @@ class Order:
             top.append(topping)
         
         new_Cake = new Cake(flav,frost,fill_one, fill_two,top)
+        return new_Cake
 
     def update_item_quantity(self, id: str, change_to_quantity: int) -> None:
         """
