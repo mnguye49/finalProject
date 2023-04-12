@@ -54,28 +54,6 @@ class Order:
         new_Cake = new Cake(flav,frost,fill_one, fill_two,top)
         return new_Cake
 
-    def update_item_quantity(self, id: str, change_to_quantity: int) -> None:
-        """
-        Updates the quantity of an item in the user's cart.
-
-        args:
-            - id: The id of the item.
-            - quantity: The quantity of the item.
-        """
-        if self.cart[id]["quantity"] + change_to_quantity <= 0:
-            self.remove_item(id)
-        else:
-            self.cart[id]["quantity"] += change_to_quantity
-
-    def remove_item(self, id: str) -> None:
-        """
-        Removes an item from the user's cart.
-
-        args:
-            - id: The id of the item.
-        """
-        del self.cart[id]
-
     def update_total_cost(self) -> None:
         """
         Updates the total cost of the user's cart.
