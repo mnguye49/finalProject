@@ -30,18 +30,13 @@ class Order:
 
     def create_order(flavor, frosting, filling_1, filling_2, toppings) -> Cake:
         """
-        Creates a new item to add to the user's cart.
+        Creates a cake order as per the user's choice(s).
 
         args:
-            - id: The id of the item.
-            - name: The name of the item.
-            - price: The price of the item.
-            - quantity: The quantity of the item.
-            - discount: The discount of the item.
-            - tax_rate: The tax rate of the item.
+      
 
         returns:
-            - None
+            - Cake
         """
         flav = flavor
         frost = frosting
@@ -64,6 +59,9 @@ class Order:
         
         for each t in cake_order.toppings:
             curr_price += 1.00
+        
+        if (self.isDelivery == True):
+            curr_price += 3.00
         
         self.total_cost = curr_price
         
@@ -98,7 +96,7 @@ class Cake:
          
     
 
-class Sessions:
+class Account:
     """
     Sessions is a class that represents the collection of active sessions.
 
@@ -106,15 +104,15 @@ class Sessions:
         - None
 
     attributes:
-        - sessions: A dictionary of user sessions.
+        - orders: A dictionary of past user orders.
     """
 
     def __init__(self):
-        self.sessions = {}
+        self.sessions.orders = {}
 
-    def add_new_session(self, username: str, db: Database) -> None:
+    def add_order_to_history(self, username: str, db: Database, ord: Order) -> None:
         """
-        Adds a new user session to the collection of sessions.
+        Adds an order to the collection of previous orders.
 
         args:
             - username: The username of the user.
@@ -123,7 +121,7 @@ class Sessions:
         returns:
             - None
         """
-        self.sessions[username] = UserSession(username, db)
+        self.sessions.append(ord) 
 
     def get_session(self, username: str) -> UserSession:
         """
@@ -159,4 +157,4 @@ class Sessions:
         returns:
             - A dictionary of user sessions.
         """
-        return self.sessions
+        return self.orders
