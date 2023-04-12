@@ -10,8 +10,8 @@ VALUES ('llamport', '9171d14954eeda4e70777c23d98e349818125cdaeb884ff97ebf8cc0a9c
 INSERT into `users` (`username`, `password_hash`, `email`, `first_name`, `last_name`)
 VALUES ('bliskov', '1e4b9ae956cad1385cfa6fffd8323dd16c3fe18c54e6447e49bddef2138d042e84e1505a541c6ef19a5026e684b2559efd366145870a0a8d4d4173c0877f6cd2', 'barbara@thor.com', 'Barbara', 'Liskov');
 
-INSERT into `inventory` (`item_name`, `info`, `price`, `stock`, `image_url`, `category`)
-VALUES ('Apples', 'An edible cultivation of the Malus genus.', 2.00, 100, 'static/images/apple.jpeg', 'Fruit');
+INSERT into `inventory` ( `item_name`,`flavor`, `frosting`,`filling_one`, `filling_two`,`info`, `price`, `stock`, `image_url`, `category`)
+VALUES ('Pandan Fruit Cake', 'Pandan','Whipped Cream', 'Sliced Strawberries with frosting', 'Sliced Kiwis with Frosting','An edible cultivation of the Malus genus.', 25.00, 100, 'static/images/apple.jpeg', 'Fruit');
 
 INSERT into `inventory` (`item_name`, `info`, `price`, `stock`, `image_url`, `category`)
 VALUES ('Bananas', 'A long curved fruit which grows in clusters and has soft pulpy flesh and yellow skin when ripe.', 1.00, 100, 'static/images/banana.jpeg', 'Fruit');
