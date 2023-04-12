@@ -101,19 +101,24 @@ def update_email(username: str, key: str, salt: str, email: str):
             file.write(f"\n{username}:{salt}:{key}:{email}")
 
 def check_email(email: str) -> bool:
-    email, new_email = email.strip(), new_email.strip()
-    return email == new_email
+    with open("authentication/passwords.txt", "r") as file:
+        lines=file.readlines()
+    for line in lines:
+        if line.split(":")[3] == email:
+            return True
+    return False
 
 def login_pipeline(username: str, password: str, email: str) -> bool:
     """
-    Checks if a username and password combination is correct.
+    Checks if a username, password, and email combination is correct.
 
     args:
         - username: A string of the username to check.
         - password: A string of the password to check.
+        - email: A string of the email to check.
 
     returns:
-        - True if the username and password combination is correct, False if not.
+        - True if the username, password and email combination is correct; False if not.
     """
     if not username_exists(username):
         return False
