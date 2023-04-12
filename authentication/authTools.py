@@ -104,7 +104,7 @@ def check_email(email: str) -> bool:
     email, new_email = email.strip(), new_email.strip()
     return email == new_email
 
-def login_pipeline(username: str, password: str) -> bool:
+def login_pipeline(username: str, password: str, email: str) -> bool:
     """
     Checks if a username and password combination is correct.
 
@@ -124,7 +124,8 @@ def login_pipeline(username: str, password: str) -> bool:
         if line.split(":")[0] == username:
             salt = line.split(":")[1]
             key = line.split(":")[2]
-            return check_password(password, salt, key)
+            email = line.split(":")[3]
+            return check_password(password, salt, key, email)
     return False
 
 def main():
