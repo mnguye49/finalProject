@@ -4,6 +4,12 @@
 
 <h2> Fillings and Toppings </h2>
 
+<h3>Order So Far</h3>
+<ul>
+    <li>Flavor: {{ flav }}</li>
+    <li>Frosting: {{ frost }}</li>
+</ul>
+
 <p>Choose the first filling you want:</p>
 
 <form>
@@ -57,7 +63,10 @@
  <input type "checkbox" name="mGlaze" id="mGlaze"
  <label for="mGlaze">Mirror Glaze</label>
  <input type "checkbox" name="caramel" id="caramel"
- <label for="caramel">Caramel Sauce</label>                  
+ <label for="caramel">Caramel Sauce</label>  
+                     
+ <input type="submit" value="Submit">
 </form>
+
 
 {% endblock %}
