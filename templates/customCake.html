@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+
+<h2> Choose the cake flavor: </h2>
+
+<form>
+<input type="radio" id="vanilla" name="flav" value="vanilla">
+<label for="vanilla">Vanilla</label><br>
+<input type="radio" id="chocolate" name="flav" value="chocolate">
+<label for="chocolate">Chocolate</label><br>
+<input type="radio" id="strawberry" name="flav" value="strawberry">
+<label for="strawberry">Strawberry</label><br>
+<input type="radio" id="pandan" name="flav" value="pandan">
+<label for="pandan">Pandan</label><br>
+<input type="radio" id="red" name="flav" value="red">
+<label for="red">Red Velvet</label><br>
+<input type="radio" id="lemon" name="flav" value="lemon">
+<label for="lemon">Lemon Chiffon</label><br>
+<input type="radio" id="carrot" name="flav" value="carrot">
+<label for="carrot">Carrot</label><br>
+<input type="radio" id="shortcake" name="flav" value="shortcake">
+<label for="shortcake">Shortcake</label><br>
+<input type="radio" id="otherFlav" name="flav" value="otherFlav">
+<label for="otherFlav">Other:</label>
+<input type="text" name=altFlav"><br><br>
+
+<label for="frost">Choose the frosting you want:</label><br><br>
+<input type="radio" id="noFrosting" name="frost" value="noFrosting">
+<label for="noFrosting">None</label><br>
+<input type="radio" id="whip" name="frost" value="whip">
+<label for="whip">Whipped Cream</label><br>
+<input type="radio" id="buttercream" name="frost" value="buttercream">
+<label for="buttercream">Buttercream</label><br>
+<input type="radio" id="coffee" name="frost" value="coffee">
+<label for="coffee">Coffee Buttercream</label><br>
+<input type="radio" id="cream" name="frost" value="cream">
+<label for="cream">Cream Cheese</label><br>
+<input type="radio" id="vFrost" name="frost" value="vFrost">
+<label for="vFrost">Vanilla</label><br>
+<input type="radio" id="cFrost" name="frost" value="cFrost">
+<label for="cFrost">Chocolate</label><br>
+<input type="radio" id="cFrost" name="frost" value="cFrost">
+<label for="cFrost">Chocolate</label><br>
+<label for="otherFrost">Other:</label>
+<input type="text" name=altFrost"><br><br>
+
+<input type="submit" value="Submit">
+</form>
+
+{% endblock %}
