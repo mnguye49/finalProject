@@ -14,6 +14,15 @@ products = db.get_full_inventory()
 sessions = Sessions()
 sessions.add_new_session(username, db)
 
+global CAKE
+
+CAKE = {
+    'flavor': '',
+    'frosting': '',
+    'filling_one': '',
+    'filling_two': '',
+    'toppings': []
+}
 
 @app.route('/')
 def index_page():
@@ -107,6 +116,21 @@ def register():
     db.insert_user(username, key, email, first_name, last_name)
     return render_template('index.html')
 
+@app.route('/customization', methods=['POST'])
+def customization():
+    flav = request.form['flav']
+    frost = request.form['frost']
+    
+    CAKE['flavor'] = flav
+    CAKE['frosting'] = frost
+    
+    return render_template('customization.html', flav=flav, frost=frost)
+
+@app.route('/payment', methods=['POST'])
+def payment():
+    filling1 = request.form['filling_one']
+    filling2 = request.form['filling_two']
+    toppings = request.form['toppings']
 
 @app.route('/checkout', methods=['POST'])
 def checkout():
@@ -122,7 +146,7 @@ def checkout():
     modifies:
         - sessions: adds items to the user's cart
     """
-    order = {}
+    order = sessions.create
     user_session = sessions.get_session(username)
     for item in products:
         print(f"item ID: {item['id']}")
