@@ -53,7 +53,20 @@ class Order:
         
         new_Cake = new Cake(flav,frost,fill_one, fill_two,top)
         return new_Cake
-
+    
+    def calculate_price(self, cake_order):
+        curr_price = 20.00
+        
+        if (cake_order.filling_one != "frosting"):
+            curr_price += 2.00
+        if (cake_order.filling_two != "noMore"):
+            curr_price += 2.00
+        
+        for each t in cake_order.toppings:
+            curr_price += 1.00
+        
+        self.total_cost = curr_price
+        
     def update_total_cost(self) -> None:
         """
         Updates the total cost of the user's cart.
@@ -72,6 +85,7 @@ class Order:
         """
         self.update_total_cost()
         self.date = datetime.now()
+        
 
 class Cake:
     
@@ -81,7 +95,7 @@ class Cake:
         self.filling_one = filling_one
         self.filling_two = filling_two
         self.toppings = toppings
-    
+         
     
 
 class Sessions:
