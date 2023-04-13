@@ -1,11 +1,12 @@
 CREATE TABLE inventory (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
     item_name VARCHAR(255) NOT NULL,
-    info VARCHAR(255) NOT NULL,
+    flavor VARCHAR(255) NOT NULL,
+    frosting VARCHAR(255) NOT NULL,
+    filling1 VARCHAR(255) NOT NULL,
+    filling2 VARCHAR(255) NOT NULL,
+    toppings text[],
     price DECIMAL(10,2) NOT NULL,
-    stock INTEGER NOT NULL,
-    image_url VARCHAR(255) NOT NULL,
-    category VARCHAR(255) NOT NULL
+    stock INTEGER NOT NULL
 );
 
 CREATE TABLE users (
