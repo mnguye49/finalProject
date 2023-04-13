@@ -15,9 +15,9 @@ class Order:
         - is_Custom: A bool determining if the user wants their cake custom ordered or not
         - cake: An object containing the cake that the user ordered
         - time: the frosting they want on the cake
-        - date: A dictionary of dictionaries representing the items in the user's cart.
         - total_cost: The total cost of the order.
         - date: The date the user wants their cake by
+        - time: The time they want want the cake by
         - is_Delivery: a bool determining whether the user wants to have their cake delivered or picked up in person.
     """
 
@@ -152,8 +152,29 @@ class Account:
             - A dictionary of user sessions.
         """
         return self.orders
-
-    def update_rewards():
+    
+    def show_rewards(username):
+        reward = 0
+        current_rewards = []
+        with open("core/orderCount.txt", "r") as file:
+            lines = file.readlines()
+            for line in lines:
+                if line.split(":")[0] == username:
+                    count = line.split(":")[1]
+                    reward = int(count)
+                
+        with open("core/orderCount.txt","r") as files:
+            file_reader = files.readlines()
+            for fr in file_reader:
+                splitted_num = fr.split(":")[0]
+                reward_num = int(splitted_num)
+                reward_str = fr.split(":")[1]
+                if r <= reward:
+                    current_rewards.append(reward_str)
+        
+        return current_rewards                
+            
+    def update_rewards(username: str):
         
         with open("core/orderCount.txt", "r") as file:
             lines = file.readlines()
@@ -171,4 +192,6 @@ class Account:
                     file.write(line)
             if not found:
                 file.write(f"\n{username}:1")
+                
+  
             
