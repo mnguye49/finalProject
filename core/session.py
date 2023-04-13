@@ -64,12 +64,6 @@ class Order:
             curr_price += 3.00
         
         self.total_cost = curr_price
-        
-    def update_total_cost(self) -> None:
-        """
-        Updates the total cost of the user's cart.
-        """
-        self.total_cost = calculate_total_cost(self.cart)
 
     def submit_cart(self) -> None:
         """
@@ -108,7 +102,7 @@ class Account:
     """
 
     def __init__(self):
-        self.sessions.orders = {}
+        self.orders = {}
 
     def add_order_to_history(self, username: str, db: Database, ord: Order) -> None:
         """
@@ -121,9 +115,9 @@ class Account:
         returns:
             - None
         """
-        self.sessions.append(ord) 
+        self.orders
 
-    def get_session(self, username: str) -> UserSession:
+    def get_session(self, username: str) -> Order:
         """
         Gets a user session from the collection of sessions.
 
@@ -133,7 +127,7 @@ class Account:
         returns:
             - The user session.
         """
-        return self.sessions[username]
+        return self.orders[username]
 
     def remove_session(self, username: str) -> None:
         """
@@ -158,3 +152,23 @@ class Account:
             - A dictionary of user sessions.
         """
         return self.orders
+
+    def update_rewards():
+        
+        with open("core/orderCount.txt", "r") as file:
+            lines = file.readlines()
+        with open("core/orderCount.txt", "w") as file:
+            found = False
+            for line in lines:
+                if line.split(":")[0] == username:
+                    found = True
+                    count = line.split(":")[1]
+                    currOrders = int(count)
+                    updated = count+1
+                    updatedOrders = str(updated)
+                    file.write(f"{username}:{updatedOrders}")
+                else:
+                    file.write(line)
+            if not found:
+                file.write(f"\n{username}:1")
+            
