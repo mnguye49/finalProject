@@ -129,6 +129,16 @@ class Account:
         """
         return self.orders
     
+    def cancel_order(self, username: str) -> None:
+        """
+        Removes a user session from the collection of sessions.
+        args:
+            - username: The username of the user.
+        returns:
+            - None
+        """
+        del self.orders[username]
+        
     def show_rewards(username):
         reward = 0
         current_rewards = []
@@ -170,4 +180,3 @@ class Account:
                 file.write(f"\n{username}:1")
                 
   
-            
