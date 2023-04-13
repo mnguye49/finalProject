@@ -87,6 +87,22 @@ def check_password(password: str, salt: str, key: str) -> bool:
     return key == new_key
 
 def update_email(username: str, key: str, salt: str, email: str):
+    """
+    Updates the passwords.txt file with a new username, password, and email combination.
+    If the username is already in the file, the password will be updated.
+    
+    args:
+        - username: A string of the username to store.
+        - key: A string of the hash to store.
+        - salt: A string of the salt to store.
+        - email: A string of the email to store.
+    
+    returns:
+        - None
+        
+    modifies:
+        - passwords.txt: Updates an existing or adds a new username, password, and email combination to the file.
+    """
     with open("authentication/passwords.txt", "r") as file:
         lines=file.readlines()
     with open("authentication/passwords.txt", "w") as file:
@@ -101,6 +117,15 @@ def update_email(username: str, key: str, salt: str, email: str):
             file.write(f"\n{username}:{salt}:{key}:{email}")
 
 def check_email(email: str) -> bool:
+    """
+    Checks if an email is correct by comparing it to a given email.
+    
+    args:
+        - email: A string of an email to check.
+    
+    returns:
+        - True if the email is correct, False if not.
+    """
     with open("authentication/passwords.txt", "r") as file:
         lines=file.readlines()
     for line in lines:
