@@ -11,16 +11,16 @@ INSERT into `users` (`username`, `password_hash`, `email`, `first_name`, `last_n
 VALUES ('bliskov', '1e4b9ae956cad1385cfa6fffd8323dd16c3fe18c54e6447e49bddef2138d042e84e1505a541c6ef19a5026e684b2559efd366145870a0a8d4d4173c0877f6cd2', 'barbara@thor.com', 'Barbara', 'Liskov');
 
 INSERT into `inventory` ( `item_name`,`flavor`, `frosting`,`filling_one`, `filling_two`, `toppings`, `price`, `stock`)
-VALUES ('Pandan Fruit Cake', 'Pandan','Whipped Cream', 'Sliced Strawberries with Frosting', 'Sliced Kiwis with Frosting', ARRAY('Strawberries', 'Kiwis', 'Mandarin Oranges', 'Grapes') , 45.00, 100);
+VALUES ('Pandan Fruit Cake', 'Pandan','Whipped Cream', 'Sliced Strawberries with Frosting', 'Sliced Kiwis with Frosting', ARRAY['Strawberries', 'Kiwis', 'Mandarin Oranges', 'Grapes'] , 45.00, 100);
 
 INSERT into `inventory` (`item_name`,`flavor`, `frosting`,`filling_one`, `filling_two`, `toppings`, `price`, `stock`)
-VALUES ('Red Velvet Cake', 'Red Velvet','Cream Cheese', 'Just Frosting', 'None', ARRAY('No Toppings'),25.00,100);
+VALUES ('Red Velvet Cake', 'Red Velvet','Cream Cheese', 'Just Frosting', 'None', ARRAY['No Toppings'],25.00,100);
 
 INSERT into `inventory` (`item_name`,`flavor`, `frosting`,`filling_one`, `filling_two`, `toppings`, `price`, `stock`)
-VALUES ('Black Forest Cake', 'Chocolate','Just Frosting', 'Cherries with Frosting', ARRAY('Cherries', 'Chocolate Shavings' ) 40.00, 100);
+VALUES ('Black Forest Cake', 'Chocolate','Just Frosting', 'Cherries with Frosting', ARRAY['Cherries', 'Chocolate Shavings'], 40.00, 100);
 
 INSERT into `inventory` (`item_name`,`flavor`,`frosting`,`filling_one`,`filling_two`,`toppings`,`price`,`stock)
-VALUES ('Carrot Cake', 'Carrot','Cream Cheese','Just Frosting','None',ARRAY('No Toppings'),30.00, 100);
+VALUES ('Carrot Cake', 'Carrot','Cream Cheese','Just Frosting','None',ARRAY['No Toppings'],30.00, 100);
 
 INSERT into `sales` (`transaction_id`, `username`, `item_id`, `quantity`, `sale_date`, `cost`)
 VALUES ('1', 'aturing', '1', 10, '2022-12-21 7:30:30', 5.50);
