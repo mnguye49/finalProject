@@ -20,7 +20,7 @@ INSERT into `inventory` (`item_name`,`flavor`, `frosting`,`filling_one`, `fillin
 VALUES ('Black Forest Cake', 'Chocolate','Just Frosting', 'Cherries with Frosting', ARRAY['Cherries', 'Chocolate Shavings'], 40.00, 100);
 
 INSERT into `inventory` (`item_name`,`flavor`,`frosting`,`filling_one`,`filling_two`,`toppings`,`price`,`stock`)
-VALUES ('Carrot Cake', 'Carrot','Cream Cheese','Just Frosting','None', ARRAY['No Toppings'], 30.00, 100);
+VALUES ('Carrot Cake', 'Carrot','Cream Cheese','Just Frosting','None', ARRAY['No Toppings' ], 30.00, 100);
 
 INSERT into `sales` (`transaction_id`, `username`, `item_id`, `quantity`, `sale_date`, `cost`)
 VALUES ('1', 'aturing', '1', 10, '2022-12-21 7:30:30', 5.50);
