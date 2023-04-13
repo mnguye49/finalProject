@@ -117,30 +117,6 @@ class Account:
         """
         self.orders[username] = ord
 
-    def get_session(self, username: str) -> Order:
-        """
-        Gets a user session from the collection of sessions.
-
-        args:
-            - username: The username of the user.
-
-        returns:
-            - The user session.
-        """
-        return self.orders[username]
-
-    def remove_session(self, username: str) -> None:
-        """
-        Removes a user session from the collection of sessions.
-
-        args:
-            - username: The username of the user.
-
-        returns:
-            - None
-        """
-        del self.sessions[username]
-
     def get_all_sessions(self) -> dict:
         """
         Gets all user sessions from the collection of sessions.
