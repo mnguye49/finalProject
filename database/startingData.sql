@@ -19,7 +19,7 @@ VALUES ('Red Velvet Cake', 'Red Velvet','Cream Cheese', 'Just Frosting', 'None',
 INSERT into `inventory` (`item_name`,`flavor`, `frosting`,`filling_one`, `filling_two`, `toppings`, `price`, `stock`)
 VALUES ('Black Forest Cake', 'Chocolate','Just Frosting', 'Cherries with Frosting', ARRAY['Cherries', 'Chocolate Shavings'], 40.00, 100);
 
-INSERT into `inventory` (`item_name`,`flavor`,`frosting`,`filling_one`,`filling_two`,`toppings`,`price`,`stock)
+INSERT into `inventory` (`item_name`,`flavor`,`frosting`,`filling_one`,`filling_two`,`toppings`,`price`,`stock`)
 VALUES ('Carrot Cake', 'Carrot','Cream Cheese','Just Frosting','None', ARRAY['No Toppings'], 30.00, 100);
 
 INSERT into `sales` (`transaction_id`, `username`, `item_id`, `quantity`, `sale_date`, `cost`)
