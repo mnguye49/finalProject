@@ -115,7 +115,7 @@ class Account:
         returns:
             - None
         """
-        self.orders
+        self.orders[username] = ord
 
     def get_session(self, username: str) -> Order:
         """
