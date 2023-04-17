@@ -19,16 +19,22 @@ class Order:
         - date: The date the user wants their cake by
         - time: The time they want want the cake by
         - is_Delivery: a bool determining whether the user wants to have their cake delivered or picked up in person.
+        - order_time: the time in which the user ordered the cake
     """
 
-    def __init__(self):
+    def __init__(self, name, email, phone):
         self.is_Custom = False
         self.total_cost = 0.0
         self.time = None
         self.date = None
         self.is_Delivery = True
+        self.order = None
+        self.order_time = datetime.now()
+        self.name = name
+        self.email = email
+        self.phone = phone
 
-    def create_order(flavor, frosting, filling_1, filling_2, toppings) -> Cake:
+    def create_order(size, flavor, frosting, filling_1, filling_2, toppings) -> None:
         """
         Creates a cake order as per the user's choice(s).
 
@@ -38,6 +44,7 @@ class Order:
         returns:
             - Cake
         """
+        cake_size = size
         flav = flavor
         frost = frosting
         fill_one = filling_1   
@@ -47,7 +54,7 @@ class Order:
             top.append(topping)
         
         new_Cake = new Cake(flav,frost,fill_one, fill_two,top)
-        return new_Cake
+        self.order = new_Cake
     
     def calculate_price(self, cake_order):
         curr_price = 20.00
@@ -64,7 +71,8 @@ class Order:
             curr_price += 3.00
         
         self.total_cost = curr_price
-
+        
+    
     def submit_cart(self) -> None:
         """
         Called when the order is submitted. Finalizes user session details.
@@ -77,6 +85,7 @@ class Order:
         """
         self.update_total_cost()
         self.date = datetime.now()
+        
         
 
 class Cake:
@@ -129,7 +138,7 @@ class Account:
         """
         return self.orders
     
-    def cancel_order(self, username: str) -> None:
+    def cancel_order(self, username: str, ord: Order) -> str:
         """
         Removes a user session from the collection of sessions.
         args:
@@ -137,8 +146,17 @@ class Account:
         returns:
             - None
         """
-        del self.orders[username]
+        canceled = 'Order Cancelled'
+        cancellation_failed = 'Sorry, order cannot be cancelled after 24 hours since ordering'
+        cancel_time = datetime.now()
+        time_diff = ord.order_time - cancel_time
         
+        if time_diff.days <= 1:
+            del self.orders[username]
+            return canceled
+        else:
+            return cancellation_failed
+               
     def show_rewards(username):
         reward = 0
         current_rewards = []
