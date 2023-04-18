@@ -1,0 +1,32 @@
+@startuml
+title Cancellation Receipt
+
+class User {
+  +name: string
+  +email: string
+}
+
+class CakeOrder {
+  +id: int
+  +user: User
+  +orderDate: Date
+  +details: string
+  +status: string
+  +cancelOrder(reason: string): bool
+}
+
+class CancellationReceipt {
+  +order: CakeOrder
+  +cancellationDate: Date
+  +reason: string
+}
+
+User -> CakeOrder: places order
+CakeOrder -> CancellationReceipt: send receipt
+CakeOrder --> User: update order status
+
+User -> CakeOrder: cancels order
+CakeOrder -> CancellationReceipt: create receipt
+CakeOrder --> User: update order status
+
+@enduml
