@@ -14,7 +14,7 @@ class Order:
     attributes:
         - is_Custom: A bool determining if the user wants their cake custom ordered or not
         - cake: An object containing the cake that the user ordered
-        - time: the frosting they want on the cake
+        - frosting: the frosting they want on the cake
         - total_cost: The total cost of the order.
         - date: The date the user wants their cake by
         - time: The time they want want the cake by
@@ -39,6 +39,12 @@ class Order:
         Creates a cake order as per the user's choice(s).
 
         args:
+            -size: the size of the cake
+            -flavor: the flavor of the cake
+            -frosting: the frosting used for the cake
+            -filling_1: the first filling for the cake
+            -filling_2: the second filling for the cake
+            -toppings: toppings used for the cake
       
 
         returns:
@@ -57,6 +63,13 @@ class Order:
         self.order = new_Cake
     
     def calculate_price(self, cake_order):
+        """
+        Calculates the price for the cake order. Costs extra money for fillings, toppings, and delivery.
+        args:
+            -cake_order: the cake that is being ordered
+        returns:
+            -curr_price: the price of the order
+        """
         curr_price = 20.00
         
         if (cake_order.filling_one != "frosting"):
@@ -158,6 +171,13 @@ class Account:
             return cancellation_failed
                
     def show_rewards(username):
+        """
+        Shows any rewards that the user has earned
+        args:
+            -username: the username of the user
+        returns:
+            -None
+        """
         reward = 0
         current_rewards = []
         with open("core/orderCount.txt", "r") as file:
