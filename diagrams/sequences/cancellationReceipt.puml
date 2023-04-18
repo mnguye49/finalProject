@@ -1,32 +1,17 @@
 @startuml
 title Cancellation Receipt
 
-class User {
-  +name: string
-  +email: string
-}
+actor User
+boundary CakeOrderSystem as system
+artifact CancellationReceipt
 
-class CakeOrder {
-  +id: int
-  +user: User
-  +orderDate: Date
-  +details: string
-  +status: string
-  +cancelOrder(reason: string): bool
-}
-
-class CancellationReceipt {
-  +order: CakeOrder
-  +cancellationDate: Date
-  +reason: string
-}
-
-User -> CakeOrder: places order
-CakeOrder -> CancellationReceipt: send receipt
-CakeOrder --> User: update order status
-
-User -> CakeOrder: cancels order
-CakeOrder -> CancellationReceipt: create receipt
-CakeOrder --> User: update order status
-
+User -> system: places cake order
+activate system
+system --> User: confirms cake order
+User -> system: cancels cake order
+system --> User: prompts for cancellation reason
+User -> system: provides cancellation reason
+system -> CancellationReceipt: creates receipt with user name, date, order details, and cancellation reason
+system --> User: sends cancellation receipt
+deactivate system
 @enduml
