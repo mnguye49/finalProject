@@ -141,7 +141,7 @@ class Account:
     def cancel_order(self, username: str, ord: Order) -> str:
         """
         Removes a user session from the collection of sessions.
-        args:
+        args: 
             - username: The username of the user.
         returns:
             - None
