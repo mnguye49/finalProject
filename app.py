@@ -15,6 +15,7 @@ sessions = Sessions()
 sessions.add_new_session(username, db)
 
 global CAKE
+global CONTACT_INFO
 
 CAKE = {
     'flavor': '',
@@ -22,6 +23,12 @@ CAKE = {
     'filling_one': '',
     'filling_two': '',
     'toppings': []
+}
+
+CONTACT_INFO = {
+    'name': '',
+    'email': '',
+    'num': ''
 }
 
 @app.route('/')
@@ -115,6 +122,16 @@ def register():
     update_passwords(username, key, salt)
     db.insert_user(username, key, email, first_name, last_name)
     return render_template('index.html')
+
+@app.route('/orderStart', methods=['POST'])
+def orderStart():
+    name = request.form['name']
+    email = request.form['email']
+    phone_number = request.form['num']
+    
+    CONTACT_INFO['name'] = name
+    CONTACT_INFO['email'] = email
+    CONTACT_INFO['num'] = phone_number
 
 @app.route('/customization', methods=['POST'])
 def customization():
