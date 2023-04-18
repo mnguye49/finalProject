@@ -7,11 +7,12 @@ from core.session import Sessions
 
 app = Flask(__name__)
 HOST, PORT = 'localhost', 8080
-global username, products, db, sessions
+global username, products, db, order
 username = 'default'
 db = Database('database/storeRecords.db')
 products = db.get_full_inventory()
 sessions = Sessions()
+order =  Order()
 sessions.add_new_session(username, db)
 
 global CAKE
@@ -148,6 +149,7 @@ def payment():
     filling1 = request.form['filling_one']
     filling2 = request.form['filling_two']
     toppings = request.form['toppings']
+    wanted = request.form.getlist('top')
 
 @app.route('/checkout', methods=['POST'])
 def checkout():
@@ -163,7 +165,8 @@ def checkout():
     modifies:
         - sessions: adds items to the user's cart
     """
-    order = sessions.create
+    
+    cake = order.create_order()
     user_session = sessions.get_session(username)
     for item in products:
         print(f"item ID: {item['id']}")
