@@ -12,23 +12,19 @@ class Order:
         - db: The database to use.
 
     attributes:
-        - is_Custom: A bool determining if the user wants their cake custom ordered or not
         - cake: An object containing the cake that the user ordered
         - frosting: the frosting they want on the cake
         - total_cost: The total cost of the order.
         - date: The date the user wants their cake by
         - time: The time they want want the cake by
-        - is_Delivery: a bool determining whether the user wants to have their cake delivered or picked up in person.
         - order_time: the time in which the user ordered the cake
     """
 
-    def __init__(self, name, email, phone, custom ):
-        self.is_Custom = custom
+    def __init__(self, name, email, phone):
         self.total_cost = 0.0
         self.time = None
         self.date = None
-        self.is_Delivery = True
-        self.order = None
+        self.cake = None
         self.order_time = datetime.now()
         self.name = name
         self.email = email
@@ -60,7 +56,7 @@ class Order:
             top.append(topping)
         
         new_Cake = new Cake(flav,frost,fill_one, fill_two,top)
-        self.order = new_Cake
+        self.cake = new_Cake
     
     def calculate_price(self, cake_order):
         """
