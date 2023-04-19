@@ -30,7 +30,7 @@ class Order:
         self.email = email
         self.phone = phone
 
-    def create_order(size, flavor, frosting, filling_1, filling_2, toppings) -> None:
+    def create_order(size, flavor, frosting, filling_1, filling_2, toppings) -> Cake:
         """
         Creates a cake order as per the user's choice(s).
 
@@ -55,8 +55,8 @@ class Order:
         for each topping in toppings:
             top.append(topping)
         
-        new_Cake = new Cake(flav,frost,fill_one, fill_two,top)
-        self.cake = new_Cake
+        new_Cake = new Cake(size, flav,frost,fill_one, fill_two,top)
+        return new_Cake
     
     def calculate_price(self, cake_order):
         """
