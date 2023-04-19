@@ -7,11 +7,11 @@ from core.session import Sessions
 
 app = Flask(__name__)
 HOST, PORT = 'localhost', 8080
-global username, products, db, is_custom, is_delivery
+global username, products, db, is_custom, is_delivery, logged_in
 username = 'default'
 db = Database('database/storeRecords.db')
 products = db.get_full_inventory()
-sessions.add_new_session(username, db)
+logged_in = False
 is_custom = False
 is_delivery = True
 global CAKE
@@ -78,7 +78,7 @@ def login():
     username = request.form['username']
     password = request.form['password']
     if login_pipeline(username, password):
-        sessions.add_new_session(username, db)
+        logged_in = True
         return render_template('home.html', products=products, sessions=sessions)
     else:
         print(f"Incorrect username ({username}) or password ({password}).")
@@ -182,7 +182,8 @@ def checkout():
     cakes = order.create_order(cake_size, cake_flavor, cake_frosting, cake_fill1, cakefill2, cake_toppings)
     order.cake = cakes
     order.calculate_price(order.cake)
-    
+    if logged_in == True:
+        
     user_session = sessions.get_session(username)
     for item in products:
         print(f"item ID: {item['id']}")
