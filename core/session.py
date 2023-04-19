@@ -22,8 +22,8 @@ class Order:
         - order_time: the time in which the user ordered the cake
     """
 
-    def __init__(self, name, email, phone):
-        self.is_Custom = False
+    def __init__(self, name, email, phone, custom ):
+        self.is_Custom = custom
         self.total_cost = 0.0
         self.time = None
         self.date = None
