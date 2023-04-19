@@ -7,12 +7,13 @@ from core.session import Sessions
 
 app = Flask(__name__)
 HOST, PORT = 'localhost', 8080
-global username, products, db, order
+global username, products, db, is_custom, is_delivery
 username = 'default'
 db = Database('database/storeRecords.db')
 products = db.get_full_inventory()
 sessions.add_new_session(username, db)
-
+is_custom = False
+is_delivery = True
 global CAKE
 global CONTACT_INFO
 
@@ -170,8 +171,14 @@ def checkout():
     cake_fill1 = CAKE.get['filling_1']
     cake_fill2 = CAKE.get['filling_2']
     cake_toppings = CAKE.get['toppings']
-    order = new Order()
-    cake = order.create_order()
+    order_name = CONTACT_INFO.get['name']
+    order_email = CONTACT_INFO.get['email']
+    contact_num = CONTACT_INFO.get['num']
+    order = new Order(order_name,order_email, contact_num)
+    cakes = order.create_order(cake_size, cake_flavor, cake_frosting, cake_fill1, cakefill2, cake_toppings)
+    order.cake = cakes
+    order.calculate_price(order.cake)
+    
     user_session = sessions.get_session(username)
     for item in products:
         print(f"item ID: {item['id']}")
