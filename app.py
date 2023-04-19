@@ -11,8 +11,6 @@ global username, products, db, order
 username = 'default'
 db = Database('database/storeRecords.db')
 products = db.get_full_inventory()
-sessions = Sessions()
-order =  Order()
 sessions.add_new_session(username, db)
 
 global CAKE
@@ -21,6 +19,7 @@ global CONTACT_INFO
 CAKE = {
     'flavor': '',
     'frosting': '',
+    'size': 9,
     'filling_one': '',
     'filling_two': '',
     'toppings': []
@@ -165,7 +164,13 @@ def checkout():
     modifies:
         - sessions: adds items to the user's cart
     """
-    
+    cake_flavor = CAKE.get['flavor']
+    cake_frosting = CAKE.get['frosting']
+    cake_size = CAKE.get['size']
+    cake_fill1 = CAKE.get['filling_1']
+    cake_fill2 = CAKE.get['filling_2']
+    cake_toppings = CAKE.get['toppings']
+    order = new Order()
     cake = order.create_order()
     user_session = sessions.get_session(username)
     for item in products:
