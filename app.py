@@ -7,7 +7,7 @@ from core.session import Sessions
 
 app = Flask(__name__)
 HOST, PORT = 'localhost', 8080
-global username, products, db, is_custom, is_delivery, logged_in
+global username, products, db, is_custom, is_delivery, logged_in, account
 username = 'default'
 db = Database('database/storeRecords.db')
 products = db.get_full_inventory()
@@ -79,6 +79,7 @@ def login():
     password = request.form['password']
     if login_pipeline(username, password):
         logged_in = True
+        account = Account()
         return render_template('home.html', products=products, sessions=sessions)
     else:
         print(f"Incorrect username ({username}) or password ({password}).")
@@ -183,6 +184,7 @@ def checkout():
     order.cake = cakes
     order.calculate_price(order.cake)
     if logged_in == True:
+        account.add_order_to_history(order)
         
     user_session = sessions.get_session(username)
     for item in products:
@@ -197,6 +199,7 @@ def checkout():
 
     return render_template('checkout.html', order=order, sessions=sessions, total_cost=user_session.total_cost)
 
-
+def cancel:
+    
 if __name__ == '__main__':
     app.run(debug=True, host=HOST, port=PORT)
