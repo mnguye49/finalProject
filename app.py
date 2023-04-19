@@ -114,11 +114,15 @@ def register():
         - passwords.txt: adds a new username and password combination to the file
         - database/storeRecords.db: adds a new user to the database
     """
-    username = request.form['username']
-    password = request.form['password']
-    email = request.form['email']
-    first_name = request.form['first_name']
-    last_name = request.form['last_name']
+    while True:
+        username = request.form['username']
+        password = request.form['password']
+        email = request.form['email']
+        first_name = request.form['first_name']
+        last_name = request.form['last_name']
+        if check_email(email) == False:
+            break
+        
     salt, key = hash_password(password)
     update_passwords(username, key, salt)
     db.insert_user(username, key, email, first_name, last_name)
