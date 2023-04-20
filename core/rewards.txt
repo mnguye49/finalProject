@@ -1,7 +1,7 @@
 1:Order 10% off
 3:First 2 toppings free
-5:
-10:
+5:If cake is larger than 5 inches, it will be priced as one two inches smaller
+10:Order 15% off
 15:
 20:
 25:
