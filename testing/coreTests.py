@@ -136,11 +136,11 @@ def test_create_order():
     
    
     """"
-    size = "Small"
+    size = 6
     flavor = "Chocolate"
     frosting = "Vanilla"
-    filling_1 = "Strawberry"
-    filling_2 = "Chocolate"
+    filling_1 = "Strawberry Jam"
+    filling_2 = "Chocolate Ganache"
     toppings = ["Sprinkles", "Chocolate chips"]
     expected_cake = Cake(size, flavor, frosting, filling_1, filling_2, toppings)
     assert create_order(size, flavor, frosting, filling_1, filling_2, toppings) == expected_cake
@@ -156,7 +156,7 @@ def test_calculate_price():
     size = 5
     flavor = "Chocolate"
     frosting = "Vanilla"
-    filling_1 = "Strawberry"
+    filling_1 = "Strawberry Jam"
     filling_2 = "noMore"
     toppings = ["Sprinkles", "Chocolate chips"]
     cake = Cake(size, flavor, frosting, filling_1, filling_2, toppings)
