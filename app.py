@@ -154,7 +154,9 @@ def payment():
     filling1 = request.form['filling_one']
     filling2 = request.form['filling_two']
     wanted = request.form.getlist('top')
-    
+    if request.form.get('otherTop'):
+        other_topping = request.form.get('altTop')
+        wanted.append(other_topping)
     CAKE['filling_one']=filling1
     CAKE['filling_two']=filling2
     CAKE['toppings']=wanted
