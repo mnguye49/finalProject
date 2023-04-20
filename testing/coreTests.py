@@ -121,3 +121,45 @@ def test_get_session_db() -> tuple:
         return False, error
     else:
         return True, "Session's database is correct."
+   
+def test_create_order():
+    """"
+    Tests that the create_order method works
+    
+    args: 
+    -size: the size of the cake
+    -flavor: the flavor of the cake
+    -frosting: the frosting used for the cake
+    -filling_1: the first filling for the cake
+    -filling_2: the second filling for the cake
+    -toppings: toppings used for the cake
+    
+   
+    """"
+    size = "Small"
+    flavor = "Chocolate"
+    frosting = "Vanilla"
+    filling_1 = "Strawberry"
+    filling_2 = "Chocolate"
+    toppings = ["Sprinkles", "Chocolate chips"]
+    expected_cake = Cake(size, flavor, frosting, filling_1, filling_2, toppings)
+    assert create_order(size, flavor, frosting, filling_1, filling_2, toppings) == expected_cake
+
+def test_calculate_price():
+    
+     """"
+    Tests that the create_order method works
+    
+    args: 
+    -cake_order
+    """"
+    size = 5
+    flavor = "Chocolate"
+    frosting = "Vanilla"
+    filling_1 = "Strawberry"
+    filling_2 = "noMore"
+    toppings = ["Sprinkles", "Chocolate chips"]
+    cake = Cake(size, flavor, frosting, filling_1, filling_2, toppings)
+    expected_price = 15.00
+    assert calculate_price(cake) == expected_price
+
