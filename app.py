@@ -22,7 +22,7 @@ CAKE = {
     'frosting': '',
     'size': 9,
     'filling_one': '',
-    'filling_two': '',
+    'filling_two':'',
     'toppings': []
 }
 
@@ -153,8 +153,11 @@ def customization():
 def payment():
     filling1 = request.form['filling_one']
     filling2 = request.form['filling_two']
-    toppings = request.form['toppings']
     wanted = request.form.getlist('top')
+    
+    CAKE['filling_one']=filling1
+    CAKE['filling_two']=filling2
+    CAKE['toppings']=wanted
 
 @app.route('/checkout', methods=['POST'])
 def checkout():
