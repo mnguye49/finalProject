@@ -61,39 +61,30 @@ class Order:
     def calculate_price(self, cake_order):
         """
         Calculates the price for the cake order. Costs extra money for fillings, toppings, and delivery.
+        The pricing after 5 inches starts out at $18 and increases by $8 for every 2 inches 
         args:
             -cake_order: the cake that is being ordered
         returns:
             -curr_price: the price of the order
         """
-        curr_price = 20.00
+        if cake_order.size <= 5:
+            curr_price = 11.00
+        else:
+            size_diff = cake_order.size - 6
+            upcharge = size_diff * 8.00
+            adjustment = size_diff % 2
+            adjusted = upcharge - adjustment
+            curr_price = 18.00 + adjusted
         
-        if (cake_order.filling_one != "frosting"):
+        if cake_order.filling_one != "frosting":
             curr_price += 2.00
-        if (cake_order.filling_two != "noMore"):
+        if cake_order.filling_two != "noMore":
             curr_price += 2.00
         
         for each t in cake_order.toppings:
             curr_price += 1.00
         
-        if (self.isDelivery == True):
-            curr_price += 3.00
-        
         self.total_cost = curr_price
-        
-    
-    def submit_cart(self) -> None:
-        """
-        Called when the order is submitted. Finalizes user session details.
-
-        args:
-            - None
-
-        returns:
-            - None
-        """
-        self.update_total_cost()
-        self.date = datetime.now()
         
         
 
