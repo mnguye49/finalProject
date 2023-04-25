@@ -141,11 +141,20 @@ def orderStart():
 
 @app.route('/customization', methods=['POST'])
 def customization():
-    flav = request.form['flav']
-    frost = request.form['frost']
+        if request.form['flav'] == otherFlav:
+        flav = request.form['altFlav']
+    else:
+        flav = request.form['flav']
+    if request.form['frost'] == otherFrost:
+        frost = request.form['altFrost']
+    else:
+        frost = request.form['frost']
+    
+    size = request.form['size']
     
     CAKE['flavor'] = flav
     CAKE['frosting'] = frost
+    CAKE['size'] = size
     
     return render_template('customization.html', flav=flav, frost=frost)
 
