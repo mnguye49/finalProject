@@ -6,7 +6,8 @@ CREATE TABLE inventory (
     filling2 VARCHAR(255) NOT NULL,
     toppings text[],
     price DECIMAL(10,2) NOT NULL,
-    stock INTEGER NOT NULL
+    size INTEGER NOT NULL,
+    image_url VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE users (
