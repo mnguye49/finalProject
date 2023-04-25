@@ -129,6 +129,10 @@ def register():
     db.insert_user(username, key, email, first_name, last_name)
     return render_template('index.html')
 
+@app.route('/orderStart')
+def orderStart_page()
+return render_template('register.html')
+
 @app.route('/orderStart', methods=['POST'])
 def orderStart():
     name = request.form['name']
@@ -178,6 +182,7 @@ def payment():
     CAKE['filling_two']=filling2
     CAKE['toppings']=wanted
 
+  
 @app.route('/checkout', methods=['POST'])
 def checkout():
     """
