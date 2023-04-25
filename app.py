@@ -151,8 +151,16 @@ def customization():
 
 @app.route('/payment', methods=['POST'])
 def payment():
-    filling1 = request.form['filling_one']
-    filling2 = request.form['filling_two']
+    if request.form['filling_one'] == other:
+        filling1 = request.form['altOption']
+    else:
+        filling1 = request.form['filling_one']
+        
+    if request.form['filling_two'] == other2:
+        filling2 = request.form['altOption2']
+    else:
+        filling2 = request.form['filling_two']
+    
     wanted = request.form.getlist('top')
     if request.form.get('otherTop'):
         other_topping = request.form.get('altTop')
