@@ -159,6 +159,7 @@ class Account:
         
     def apply_reward(self, username: str, ord: Order):
         reward = 0
+        toppings = ord.cake.top
         with open("core/orderCount.txt", "r") as file:
             lines = file.readlines()
             for line in lines:
@@ -179,7 +180,11 @@ class Account:
                     if r == 1:
                         discounted = ord.total_cost * 0.9
                         ord.total_cost = discounted
-            
+                    elif r == 3:
+                        toppings = ord.cake
+                        if len(toppings) <= 2:
+                            ord.total_cost -= 2.00
+                            
     def show_rewards(username):
         """
         Shows any rewards that the user has earned
