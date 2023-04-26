@@ -156,7 +156,30 @@ class Account:
             return canceled
         else:
             return cancellation_failed
-               
+        
+    def apply_reward(self, username: str, ord: Order):
+        reward = 0
+        with open("core/orderCount.txt", "r") as file:
+            lines = file.readlines()
+            for line in lines:
+                if line.split(":")[0] == username:
+                    count = line.split(":")[1]
+                    reward = int(count)
+        r = reward
+        if reward > 100:
+            r = reward % 100
+        
+        with open("core/rewards.txt","r") as files:
+            file_reader = files.readlines()
+            for fr in file_reader:
+                splitted_num = fr.split(":")[0]
+                reward_num = int(splitted_num)
+                reward_str = fr.split(":")[1]
+                if r == reward_num:
+                    if r == 1:
+                        discounted = ord.total_cost * 0.9
+                        ord.total_cost = discounted
+            
     def show_rewards(username):
         """
         Shows any rewards that the user has earned
@@ -174,13 +197,13 @@ class Account:
                     count = line.split(":")[1]
                     reward = int(count)
                 
-        with open("core/orderCount.txt","r") as files:
+        with open("core/rewards.txt","r") as files:
             file_reader = files.readlines()
             for fr in file_reader:
                 splitted_num = fr.split(":")[0]
                 reward_num = int(splitted_num)
                 reward_str = fr.split(":")[1]
-                if r <= reward:
+                if reward_num <= reward:
                     current_rewards.append(reward_str)
         
         return current_rewards                
