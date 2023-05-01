@@ -1,22 +1,22 @@
-1:Order 10% off:0.1
+1:Order 10% off
 3:First 2 toppings free
 5:If cake is larger than 5 inches, it will be priced as one two inches smaller
-10:Order 15% off:0.15
+10:Order 15% off:0.85
 15:First filling free
 20:If cake is larger than 6 inches, it will be priced as one two inches smaller
-25:Order 20% off:0.2
+25:Order 20% off:0.8
 30:First 3 toppings free
 35:If cake is larger than 7 inches, it will be priced as one two inches smaller
-40:Order 25% off:0.25
+40:Order 25% off:0.75
 45:Second filling free
 50:If cake is larger than 8 inches, it will be priced as one two inches smaller
-55:Order 30% off:0.3
+55:Order 30% off:0.7
 60:First 2 toppings free
 65:If cake is larger than 9 inches, it will be priced as one two inches smaller
-70:Order 35% off:0.35
+70:Order 35% off:0.65
 75:First filling free
 80:If cake is larger than 10 inches, it will be priced as one two inches smaller
-85:Order 40% off:0.4
+85:Order 40% off:0.6
 90:First 3 toppings free
 95:If cake is larger than 11 inches, it will be priced as one two inches smaller
 100:Order 50% off:0.5
