@@ -213,16 +213,6 @@ def checkout():
     if logged_in == True:
         account.add_order_to_history(order)
         
-    user_session = sessions.get_session(username)
-    for item in products:
-        print(f"item ID: {item['id']}")
-        if request.form[str(item['id'])] > '0':
-            count = request.form[str(item['id'])]
-            order[item['item_name']] = count
-            user_session.add_new_item(
-                item['id'], item['item_name'], item['price'], count)
-
-    user_session.submit_cart()
 
     return render_template('checkout.html', order=order, account=account, total_cost=order.total_cost)
 
