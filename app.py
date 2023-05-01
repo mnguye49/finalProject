@@ -80,7 +80,7 @@ def login():
     if login_pipeline(username, password):
         logged_in = True
         account = Account()
-        return render_template('home.html', products=products, sessions=sessions)
+        return render_template('home.html', products=products, account=account)
     else:
         print(f"Incorrect username ({username}) or password ({password}).")
         return render_template('index.html')
@@ -207,9 +207,9 @@ def checkout():
     order_email = CONTACT_INFO.get['email']
     contact_num = CONTACT_INFO.get['num']
     order = new Order(order_name,order_email, contact_num)
-    cakes = order.create_order(cake_size, cake_flavor, cake_frosting, cake_fill1, cakefill2, cake_toppings)
+    cakes = order.create_order(cake_size, cake_flavor, cake_frosting, cake_fill1, cake_fill2, cake_toppings)
     order.cake = cakes
-    order.calculate_price(order.cake)
+    order.calculate_price(cakes)
     if logged_in == True:
         account.add_order_to_history(order)
         
@@ -224,7 +224,7 @@ def checkout():
 
     user_session.submit_cart()
 
-    return render_template('checkout.html', order=order, sessions=sessions, total_cost=user_session.total_cost)
+    return render_template('checkout.html', order=order, account=account, total_cost=order.total_cost)
 
 def cancel:
     
