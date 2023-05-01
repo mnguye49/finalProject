@@ -227,6 +227,11 @@ def checkout():
     return render_template('checkout.html', order=order, account=account, total_cost=order.total_cost)
 
 def cancel:
+    cancellation_request = request.form['cancelRequest']
+    cancel = account.cancel_order(order)
+    
+
+    
     
 if __name__ == '__main__':
     app.run(debug=True, host=HOST, port=PORT)
