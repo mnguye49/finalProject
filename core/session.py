@@ -185,11 +185,11 @@ class Account:
                         o.total_cost = discounted
                     elif r == 3:
                         toppings = o.cake
-                        if len(toppings) <= 2:
+                        if len(toppings) >= 2:
                             o.total_cost -= 2.00
                     elif r == 5:
                         cake_size = o.cake.size
-                        self.size_reward(cake_size, n, o)
+                        self.size_reward(cake_size, num, o)
                     elif r == 10:
                         discounted = ord.total_cost * 0.85
                         o.total_cost = discounted
@@ -199,17 +199,17 @@ class Account:
                             o.total_cost -=2.00
                     elif r == 20:
                         cake_size =o.cake.size
-                        self.size_reward(cake_size, n, o)
+                        self.size_reward(cake_size, num, o)
                     elif r == 25:
                         discounted = ord.total_cost * 0.8
                         o.total_cost = discounted
                     elif r == 30:
                         toppings = o.cake
-                        if len(toppings) <= 3:
+                        if len(toppings) >= 3:
                             o.total_cost -= 2.00
                     elif r == 35:
                         cake_size=o.cake.size
-                        self.size_reward(cake_size,n,o)
+                        self.size_reward(cake_size,num,o)
                     elif r == 40:
                         discounted = ord.total_cost * 0.75
                         o.total_cost=discounted
@@ -219,17 +219,17 @@ class Account:
                             o.total_cost -= 2.00
                     elif r == 50:
                         cake_size=o.cake.size
-                        self.size_reward(cake_size,n,o)
+                        self.size_reward(cake_size,num,o)
                     elif r == 55:
                         discounted = ord.total_cost * 0.7
                         o.total_cost=discounted
                     elif r == 60:
                         toppings=o.cake
-                        if len(toppings)<=2:
+                        if len(toppings)>=2:
                             o.total_cost -= 2.00
                     elif r == 65:
                         cake_size=o.cake.size
-                        self.size_reward(cake_size,n,o)
+                        self.size_reward(cake_size,num,o)
                     elif r == 70:
                         discounted = ord.total_cost * 0.65
                         o.total_cost=discounted
@@ -239,17 +239,17 @@ class Account:
                             o.total_cost-=2.00
                     elif r == 80:
                         cake_size=o.cake.size
-                        self.size_reward(cake_size,n,o)
+                        self.size_reward(cake_size,num,o)
                     elif r == 85:
                         discounted=ord.total_cost * 0.6
                         o.total_cost=discounted
                     elif r == 90:
                         toppings=o.cake
-                        if len(toppings)<=3:
+                        if len(toppings)>=3:
                             o.total_cost -=2.00
                     elif r == 95:
                         cake_size=o.cake.size
-                        self.size_reward(cake_size,n,o)
+                        self.size_reward(cake_size,num,o)
                     elif r == 100:
                         discounted=ord.total_cost *0.5
                         o.total_cost=discounted
