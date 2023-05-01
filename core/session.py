@@ -113,7 +113,7 @@ class Account:
     def __init__(self):
         self.orders = {}
 
-    def add_order_to_history(self, username: str, db: Database, ord: Order) -> None:
+    def add_order_to_history(self, username: str, db: Database, o: Order) -> None:
         """
         Adds an order to the collection of previous orders.
 
@@ -124,7 +124,7 @@ class Account:
         returns:
             - None
         """
-        self.orders[username] = ord
+        self.orders[username] = o
 
     def get_all_sessions(self) -> dict:
         """
@@ -149,7 +149,7 @@ class Account:
         canceled = 'Order Cancelled'
         cancellation_failed = 'Sorry, order cannot be cancelled after 24 hours since ordering'
         cancel_time = datetime.now()
-        time_diff = ord.order_time - cancel_time
+        time_diff = o.order_time - cancel_time
         
         if time_diff.days <= 1:
             del self.orders[username]
@@ -157,9 +157,9 @@ class Account:
         else:
             return cancellation_failed
         
-    def apply_reward(self, username: str, ord: Order):
+    def apply_reward(self, username: str, o: Order):
         reward = 0
-        toppings = ord.cake.top
+        toppings = o.cake.top
         with open("core/orderCount.txt", "r") as file:
             lines = file.readlines()
             for line in lines:
@@ -176,14 +176,83 @@ class Account:
                 splitted_num = fr.split(":")[0]
                 reward_num = int(splitted_num)
                 reward_str = fr.split(":")[1]
+                n = fr.split(":")[2]
+                num=int(min)
+                
                 if r == reward_num:
                     if r == 1:
                         discounted = ord.total_cost * 0.9
-                        ord.total_cost = discounted
+                        o.total_cost = discounted
                     elif r == 3:
-                        toppings = ord.cake
+                        toppings = o.cake
                         if len(toppings) <= 2:
-                            ord.total_cost -= 2.00
+                            o.total_cost -= 2.00
+                    elif r == 5:
+                        cake_size = o.cake.size
+                        self.size_reward(cake_size, n, o)
+                    elif r == 10:
+                        discounted = ord.total_cost * 0.85
+                        o.total_cost = discounted
+                    elif r == 15:
+                        fill=o.cake.filling_one
+                        if fill != "frosting":
+                            o.total_cost -=2.00
+                    elif r == 20:
+                        cake_size =o.cake.size
+                        self.size_reward(cake_size, n, o)
+                    elif r == 25:
+                        discounted = ord.total_cost * 0.8
+                        o.total_cost = discounted
+                    elif r == 30:
+                        toppings = o.cake
+                        if len(toppings) <= 3:
+                            o.total_cost -= 2.00
+                    elif r == 35:
+                        cake_size=o.cake.size
+                        self.size_reward(cake_size,n,o)
+                    elif r == 40:
+                        discounted = ord.total_cost * 0.75
+                        o.total_cost=discounted
+                    elif r == 45:
+                        fill2=o.cake.filling_two
+                        if fill2 != "noMore":
+                            o.total_cost -= 2.00
+                    elif r == 50:
+                        cake_size=o.cake.size
+                        self.size_reward(cake_size,n,o)
+                    elif r == 55:
+                        discounted = ord.total_cost * 0.7
+                        o.total_cost=discounted
+                    elif r == 60:
+                        toppings=o.cake
+                        if len(toppings)<=2:
+                            o.total_cost -= 2.00
+                    elif r == 65:
+                        cake_size=o.cake.size
+                        self.size_reward(cake_size,n,o)
+                    elif r == 70:
+                        discounted = ord.total_cost * 0.65
+                        o.total_cost=discounted
+                    elif r == 75:
+                        fill=o.cake.filling_one
+                        if fill != "frosting":
+                            o.total_cost-=2.00
+                    elif r == 80:
+                        cake_size=o.cake.size
+                        self.size_reward(cake_size,n,o)
+                    elif r == 85:
+                        discounted=ord.total_cost * 0.6
+                        o.total_cost=discounted
+                    elif r == 90:
+                        toppings=o.cake
+                        if len(toppings)<=3:
+                            o.total_cost -=2.00
+                    elif r == 95:
+                        cake_size=o.cake.size
+                        self.size_reward(cake_size,n,o)
+                    elif r == 100:
+                        discounted=ord.total_cost *0.5
+                        o.total_cost=discounted
                             
     def show_rewards(username):
         """
@@ -211,8 +280,16 @@ class Account:
                 if reward_num <= reward:
                     current_rewards.append(reward_str)
         
-        return current_rewards                
-            
+        return current_rewards        
+    
+    def size_reward(current_size: int, min_size:int, o: Order)
+        if current_size - 2 <= 5:
+           o.cake.size = 5
+           cake = o.cake
+           o.calculate_price(cake)
+        else:
+            o.total_cost -= 16.00
+        
     def update_rewards(username: str):
         
         with open("core/orderCount.txt", "r") as file:
