@@ -289,7 +289,7 @@ class Account:
         
         return current_rewards        
     
-    def size_reward(current_size: int, min_size:int, o: Order):
+    def size_reward(current_size: str, min_size:int, o: Order):
         """
         Calculates the price of the cake if it exceeds 5 inches
         args:
@@ -298,7 +298,8 @@ class Account:
         returns:
         -None
         """
-        if current_size - 2 <= 5:
+        size = int(current_size)
+        if size - 2 <= 5:
            o.cake.size = 5
            cake = o.cake
            o.calculate_price(cake)
