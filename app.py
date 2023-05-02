@@ -195,11 +195,7 @@ def customization():
     CAKE['toppings']=wanted
     
     return render_template('payment.html' )
-
-@app.route('/payment', methods=['POST'])
-def payment():
-    return render_template('checkout.html' )
-    
+ 
   
 @app.route('/checkout', methods=['POST'])
 def checkout():
@@ -235,10 +231,11 @@ def checkout():
 
     return render_template('checkout.html', order=order, account=account, total_cost=order.total_cost)
 
+@app.route('/cancellation', methods=['POST'])
 def cancel:
     cancellation_request = request.form['cancelRequest']
-    cancel = account.cancel_order(order, username)
-    return render_template('cancellation.html')
+    cancel_status = account.cancel_order(order, username)
+    return render_template('orderCancelled.html', cancel_status=cancel_status)
 
 def cancelled:
     if order.cancelled != True:
