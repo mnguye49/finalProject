@@ -1,4 +1,5 @@
 CREATE TABLE inventory (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
     item_name VARCHAR(255) NOT NULL,
     flavor VARCHAR(255) NOT NULL,
     frosting VARCHAR(255) NOT NULL,
@@ -6,7 +7,7 @@ CREATE TABLE inventory (
     filling2 VARCHAR(255) NOT NULL,
     toppings text[],
     price DECIMAL(10,2) NOT NULL,
-    size INTEGER NOT NULL,
+    size VARCHAR(255) NOT NULL,
     image_url VARCHAR(255) NOT NULL
 );
 
