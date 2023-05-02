@@ -307,7 +307,7 @@ class Account:
         
     def update_rewards(username: str):
         """
-        Indicates how many days the user has until the next reward
+        Indicates how many orders the user has until the next reward
         args:
             -username: The username of the user
         returns:
