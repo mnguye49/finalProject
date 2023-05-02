@@ -84,7 +84,7 @@ class Database:
         self.cursor.execute("SELECT * FROM inventory WHERE id = ?", (item_id,))
         return self.cursor.fetchone()
 
-    def get_item_info_by_id(self, item_id: int):
+    def get_flavor_by_id(self, item_id: int):
         """
         Gets the info (description) of an item from the database.
 
@@ -92,13 +92,13 @@ class Database:
             - item_id: The id of the item to get.
 
         returns:
-            - The info of the item with the given id.
+            - The flavor of the item with the given id.
         """
         self.cursor.execute(
-            "SELECT info FROM inventory WHERE id = ?", (item_id,))
+            "SELECT flavor FROM inventory WHERE id = ?", (item_id,))
         return self.cursor.fetchone()
 
-    def get_item_price_by_id(self, item_id: int):
+    def get_frosting_by_id(self, item_id: int):
         """
         Gets the price of an item from the database.
 
@@ -106,13 +106,13 @@ class Database:
             - item_id: The id of the item to get.
 
         returns:
-            - The price of the item with the given id.
+            - The frosting of the item with the given id.
         """
         self.cursor.execute(
-            "SELECT price FROM inventory WHERE id = ?", (item_id,))
+            "SELECT frosting FROM inventory WHERE id = ?", (item_id,))
         return self.cursor.fetchone()
 
-    def get_item_stock_by_id(self, item_id: int):
+    def get_first_filling_by_id(self, item_id: int):
         """
         Gets the stock of an item from the database.
 
@@ -120,10 +120,10 @@ class Database:
             - item_id: The id of the item to get.
 
         returns:
-            - The stock of the item with the given id.
+            - The first filling of the item with the given id.
         """
         self.cursor.execute(
-            "SELECT stock FROM inventory WHERE id = ?", (item_id,))
+            "SELECT filling_one FROM inventory WHERE id = ?", (item_id,))
         return self.cursor.fetchone()
 
     def get_item_image_url_by_id(self, item_id: int):
@@ -140,7 +140,7 @@ class Database:
             "SELECT image_url FROM inventory WHERE id = ?", (item_id,))
         return self.cursor.fetchone()
 
-    def get_item_category_by_id(self, item_id: int):
+    def get_second_filling_by_id(self, item_id: int):
         """
         Gets the category of an item from the database.
 
@@ -151,7 +151,7 @@ class Database:
             - The category of the item with the given id.
         """
         self.cursor.execute(
-            "SELECT category FROM inventory WHERE id = ?", (item_id,))
+            "SELECT filling_two FROM inventory WHERE id = ?", (item_id,))
         return self.cursor.fetchone()
 
     # ------ Setter methods ------
@@ -171,7 +171,7 @@ class Database:
             "UPDATE inventory SET name = ? WHERE id = ?", (new_name, item_id))
         self.connection.commit()
 
-    def set_item_info(self, item_id: int, new_info: str):
+    def set_flavor(self, item_id: int, new_flav: str):
         """
         Updates the information of an item in the database.
 
@@ -183,10 +183,10 @@ class Database:
             - None
         """
         self.cursor.execute(
-            "UPDATE inventory SET info = ? WHERE id = ?", (new_info, item_id))
+            "UPDATE inventory SET flavor = ? WHERE id = ?", (new_flav, item_id))
         self.connection.commit()
 
-    def set_item_price(self, item_id: int, new_price: float):
+    def set_frosting(self, item_id: int, new_frost: float):
         """
         Updates the price of an item in the database.
 
@@ -198,10 +198,10 @@ class Database:
             - None
         """
         self.cursor.execute(
-            "UPDATE inventory SET price = ? WHERE id = ?", (new_price, item_id))
+            "UPDATE inventory SET frosting = ? WHERE id = ?", (new_frost, item_id))
         self.connection.commit()
 
-    def set_item_stock(self, item_id: int, new_stock: int):
+    def set_fill1(self, item_id: int, new_fill1: int):
         """
         Updates the stock of an item in the database.
 
@@ -213,7 +213,7 @@ class Database:
             - None
         """
         self.cursor.execute(
-            "UPDATE inventory SET stock = ? WHERE id = ?", (new_stock, item_id))
+            "UPDATE inventory SET filling_one = ? WHERE id = ?", (new_fill1, item_id))
         self.connection.commit()
 
     def set_item_image_url(self, item_id: int, new_image_url: str):
@@ -231,7 +231,7 @@ class Database:
             "UPDATE inventory SET image_url = ? WHERE id = ?", (new_image_url, item_id))
         self.connection.commit()
 
-    def set_item_category(self, item_id: int, new_category: str):
+    def set_fill2(self, item_id: int, new_fill2: str):
         """
         Updates the category of an item in the database.
 
@@ -243,7 +243,7 @@ class Database:
             - None
         """
         self.cursor.execute(
-            "UPDATE inventory SET category = ? WHERE id = ?", (new_category, item_id))
+            "UPDATE inventory SET filling_two = ? WHERE id = ?", (new_fill2, item_id))
         self.connection.commit()
 
     # --------------------------------------------
