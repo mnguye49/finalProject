@@ -19,15 +19,5 @@ CREATE TABLE users (
     last_name VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE sales (
-    sale_id INTEGER PRIMARY KEY AUTOINCREMENT,
-    transaction_id VARCHAR(255) NOT NULL,
-    username VARCHAR(255) NOT NULL,
-    item_id INTEGER NOT NULL,
-    quantity INTEGER NOT NULL,
-    sale_date DATETIME NOT NULL,
-    cost DECIMAL(10,2) NOT NULL,
-    FOREIGN KEY (username) REFERENCES users(username),
-    FOREIGN KEY (item_id) REFERENCES inventory(id)
-);
+
 
