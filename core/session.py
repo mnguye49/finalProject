@@ -30,6 +30,7 @@ class Order:
         self.name = name
         self.email = email
         self.phone = phone
+        self.cancelled = False
 
     def create_order(size, flavor, frosting, filling_1, filling_2, toppings) -> Cake:
         """
