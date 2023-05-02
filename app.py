@@ -41,7 +41,7 @@ def index_page():
     returns:
         - None
     """
-    return render_template('index.html', username=username, products=products, sessions=sessions)
+    return render_template('index.html', username=username, products=products)
 
 def premade:
     CAKE['flavor']
@@ -219,6 +219,7 @@ def checkout():
     order.cake = cakes
     order.calculate_price(cakes)
     if logged_in == True:
+        account.apply_reward(order)
         account.add_order_to_history(order)
         
 
@@ -227,7 +228,7 @@ def checkout():
 def cancel:
     cancellation_request = request.form['cancelRequest']
     cancel = account.cancel_order(order)
-    
+    return render_template('cancellation.html')
 
     
     
