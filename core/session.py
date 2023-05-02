@@ -158,6 +158,13 @@ class Account:
             return cancellation_failed
         
     def apply_reward(self, username: str, o: Order):
+        """
+        Allows the user to obtain rewards.
+        args:
+            - username: The username of the user.
+        returns:
+            - None
+        """
         reward = 0
         toppings = o.cake.top
         with open("core/orderCount.txt", "r") as file:
@@ -282,7 +289,15 @@ class Account:
         
         return current_rewards        
     
-    def size_reward(current_size: int, min_size:int, o: Order)
+    def size_reward(current_size: int, min_size:int, o: Order):
+        """
+        Calculates the price of the cake if it exceeds 5 inches
+        args:
+        -current_size: The current size of the cake
+        -min_size: The size the cake will be charged for
+        returns:
+        -None
+        """
         if current_size - 2 <= 5:
            o.cake.size = 5
            cake = o.cake
@@ -291,6 +306,13 @@ class Account:
             o.total_cost -= 16.00
         
     def update_rewards(username: str):
+        """
+        Indicates how many days the user has until the next reward
+        args:
+            -username: The username of the user
+        returns:
+            -None
+        """
         
         with open("core/orderCount.txt", "r") as file:
             lines = file.readlines()
