@@ -43,14 +43,18 @@ def index_page():
     """
     return render_template('index.html', username=username, products=products)
 
-def premade:
-    CAKE['flavor']
-    CAKE['frosting']
-    CAKE['size']
-    CAKE['filling_one']
-    CAKE['filling_two']
-    CAKE['toppings']
-    return render_template('paymment.html')
+def premade():
+   for item in products:
+    if request.form[str(item['id'])] > '0':
+        CAKE['flavor'] = request.form[str(item['flavor'])]
+        CAKE['frosting'] = request.form[str(item['frosting'])]
+        CAKE['size'] = request.form[str(item['size'])]
+        CAKE['filling_one'] = request.form[str(item['filling_one'])]
+        CAKE['filling_two']= request.form[str(item['filling_two'])]
+        CAKE['toppings'] = request.form[str(item['toppings'])]
+        
+    
+    return render_template('payment.html')
 
 @app.route('/login')
 def login_page():
