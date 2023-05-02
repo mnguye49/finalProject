@@ -12,8 +12,6 @@ username = 'default'
 db = Database('database/storeRecords.db')
 products = db.get_full_inventory()
 logged_in = False
-is_custom = False
-is_delivery = True
 global CAKE
 global CONTACT_INFO
 
