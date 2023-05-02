@@ -58,6 +58,16 @@ class Order:
         new_Cake = new Cake(size, flav,frost,fill_one, fill_two,top)
         return new_Cake
     
+    def change_size(self, size_change: int):
+        size = self.cake.size
+        cake_size = int(size)
+        min_size = 3
+        if cake_size + size_change <= 2:
+            self.cake.size = str(min_size)
+        else:
+            cake_size += size_change
+            self.cake.size = str(cake_size)
+            
     def calculate_price(self, cake_order):
         """
         Calculates the price for the cake order. Costs extra money for fillings, toppings, and delivery.
@@ -90,13 +100,13 @@ class Order:
 
 class Cake:
     
-    def __init__(self, flavor: str, frosting: str, filling_one: str, filling_two: str, toppings):
+    def __init__(self, flavor: str, frosting: str, filling_one: str, filling_two: str, toppings, str: size):
         self.flavor = flavor
         self.frosting = frosting
         self.filling_one = filling_one
         self.filling_two = filling_two
         self.toppings = toppings
-         
+        self.size = size
     
 
 class Account:
