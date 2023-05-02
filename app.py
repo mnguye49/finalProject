@@ -131,6 +131,8 @@ def register():
 def orderStart_page()
 return render_template('register.html')
 
+@app.route('/
+
 @app.route('/orderStart', methods=['POST'])
 def orderStart():
     name = request.form['name']
