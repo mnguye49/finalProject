@@ -2,7 +2,8 @@ from core.utils import calculate_total_cost
 from datetime import datetime
 from database.db import Database
 
-
+global logged
+logged = 0
 class Order:
     """
     Order is a class that represents the user's order.
@@ -96,7 +97,23 @@ class Order:
         
         self.total_cost = curr_price
         
+    def cancel_order(self) -> str:
+        """
+        Removes a user session from the collection of sessions.
+        args: 
+            - username: The username of the user.
+        returns:
+            - None
+        """
+        canceled = 'Order Cancelled'
+        cancellation_failed = 'Sorry, order cannot be cancelled after 24 hours since ordering'
+        cancel_time = datetime.now()
+        time_diff = self.order_time - cancel_time
         
+        if time_diff.days <= 1:
+            return canceled
+        else:
+            return cancellation_failed        
 
 class Cake:
     
@@ -148,24 +165,6 @@ class Account:
         """
         return self.orders
     
-    def cancel_order(self, username: str, ord: Order) -> str:
-        """
-        Removes a user session from the collection of sessions.
-        args: 
-            - username: The username of the user.
-        returns:
-            - None
-        """
-        canceled = 'Order Cancelled'
-        cancellation_failed = 'Sorry, order cannot be cancelled after 24 hours since ordering'
-        cancel_time = datetime.now()
-        time_diff = o.order_time - cancel_time
-        
-        if time_diff.days <= 1:
-            del self.orders[username]
-            return canceled
-        else:
-            return cancellation_failed
         
     def apply_reward(self, username: str, o: Order):
         """
