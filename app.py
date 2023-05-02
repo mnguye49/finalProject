@@ -42,7 +42,7 @@ def index_page():
         - None
     """
     return render_template('index.html', username=username, products=products)
-
+@app.route('/')
 def premade():
    for item in products:
     if request.form[str(item['id'])] > '0':
@@ -142,7 +142,7 @@ def register():
 
 @app.route('/orderStart')
 def orderStart_page()
-return render_template('register.html')
+return render_template('orderStart.html')
 
 @app.route('/orderStart', methods=['POST'])
 def orderStart():
@@ -153,9 +153,10 @@ def orderStart():
     CONTACT_INFO['name'] = name
     CONTACT_INFO['email'] = email
     CONTACT_INFO['num'] = phone_number
+    return render_template('customCake.html', name=name, email=email, num=num)
 
-@app.route('/customization', methods=['POST'])
-def customization():
+@app.route('/customCake', methods=['POST'])
+def customCake():
         if request.form['flav'] == otherFlav:
         flav = request.form['altFlav']
     else:
@@ -173,8 +174,8 @@ def customization():
     
     return render_template('customization.html', flav=flav, frost=frost, size=size)
 
-@app.route('/payment', methods=['POST'])
-def payment():
+@app.route('/customization', methods=['POST'])
+def customization():
     if request.form['filling_one'] == other:
         filling1 = request.form['altOption']
     else:
@@ -193,8 +194,12 @@ def payment():
     CAKE['filling_two']=filling2
     CAKE['toppings']=wanted
     
-    return render_template('payment.html')
+    return render_template('payment.html' )
 
+@app.route('/payment', methods=['POST'])
+def payment():
+    return render_template('checkout.html' )
+    
   
 @app.route('/checkout', methods=['POST'])
 def checkout():
@@ -232,9 +237,13 @@ def checkout():
 
 def cancel:
     cancellation_request = request.form['cancelRequest']
-    cancel = account.cancel_order(order)
+    cancel = account.cancel_order(order, username)
     return render_template('cancellation.html')
 
+def cancelled:
+    if order.cancelled != True:
+        if logged_in == True:
+            account.self.orders[username]
     
     
 if __name__ == '__main__':
