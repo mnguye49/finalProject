@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Customizable Cakes</title>
+</head>
+<body>
+	<!-- Login Page -->
+	<div id="login-page">
+		<h1>Welcome to Customizable Cakes!</h1>
+		<form action="home.html">
+			<label for="username">Username:</label>
+			<input type="text" id="username" name="username" required>
+			<label for="password">Password:</label>
+			<input type="password" id="password" name="password" required>
+			<input type="submit" value="Log in">
+		</form>
+	</div>
+
+	<!-- Home Page -->
+	<div id="home-page">
+		<h1>Choose your cake:</h1>
+		<form action="cart.html">
+			<label for="flavors">Flavors:</label>
+			<select id="flavors" name="flavors">
+				<option value="vanilla">Vanilla</option>
+				<option value="chocolate">Chocolate</option>
+				<option value="strawberry">Strawberry</option>
+			</select>
+			<label for="fillings">Fillings:</label>
+			<select id="fillings" name="fillings">
+				<option value="vanilla">Vanilla</option>
+				<option value="chocolate">Chocolate</option>
+				<option value="strawberry">Strawberry</option>
+			</select>
+			<label for="toppings">Toppings:</label>
+			<select id="toppings" name="toppings">
+				<option value="sprinkles">Sprinkles</option>
+				<option value="chocolate-chips">Chocolate Chips</option>
+				<option value="fruit">Fruit</option>
+			</select>
+			<input type="submit" value="Add to cart">
+		</form>
+
+		<!-- Cart -->
+		<h2>Your Cart:</h2>
+		<table>
+			<thead>
+				<tr>
+					<th>Flavors</th>
+					<th>Fillings</th>
+					<th>Toppings</th>
+					<th>Price</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- The table body will be populated by JavaScript -->
+			</tbody>
+		</table>
+		
+		<!-- Rewards Feature -->
+		<h2>Rewards:</h2>
+		<p>You have earned 10 points. Redeem them for a free cake!</p>
+	</div>
+	
+	<!-- JavaScript code to populate the cart table -->
+	<script>
+		var cartTable = document.querySelector("table tbody");
+		var form = document.querySelector("form");
+		
+		form.addEventListener("submit", function(event) {
+			event.preventDefault();
+			
+			// Get the selected values from the form
+			var flavor = document.querySelector("#flavors").value;
+			var filling = document.querySelector("#fillings").value;
+			var topping = document.querySelector("#toppings").value;
+			var price = 10.00; // Change this to the actual price of the cake
+			
+			// Add a new row to the cart table
+			var row = document.createElement("tr");
+			row.innerHTML = `
+				<td>${flavor}</td>
+				<td>${filling}</td>
+				<td>${topping}</td>
+				<td>$${price.toFixed(2)}</td>
+			`;
+			cartTable.appendChild(row);
+		});
+	</script>
+</body
