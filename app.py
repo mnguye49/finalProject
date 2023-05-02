@@ -3,11 +3,11 @@
 from authentication.authTools import login_pipeline, update_passwords, hash_password
 from database.db import Database
 from flask import Flask, render_template, request
-from core.session import Sessions
+from core.session import Order, Account
 
 app = Flask(__name__)
 HOST, PORT = 'localhost', 8080
-global username, products, db, is_custom, is_delivery, logged_in, account
+global username, products, db, is_custom, is_delivery, logged_in, account, sessions
 username = 'default'
 db = Database('database/storeRecords.db')
 products = db.get_full_inventory()
@@ -89,6 +89,7 @@ def login():
     password = request.form['password']
     if login_pipeline(username, password):
         logged_in = True
+        
         account = Account()
         return render_template('home.html', products=products, account=account)
     else:
