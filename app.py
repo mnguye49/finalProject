@@ -43,6 +43,14 @@ def index_page():
     """
     return render_template('index.html', username=username, products=products, sessions=sessions)
 
+def premade:
+    CAKE['flavor']
+    CAKE['frosting']
+    CAKE['size']
+    CAKE['filling_one']
+    CAKE['filling_two']
+    CAKE['toppings']
+    return render_template('paymment.html')
 
 @app.route('/login')
 def login_page():
@@ -131,8 +139,6 @@ def register():
 def orderStart_page()
 return render_template('register.html')
 
-@app.route('/
-
 @app.route('/orderStart', methods=['POST'])
 def orderStart():
     name = request.form['name']
@@ -160,7 +166,7 @@ def customization():
     CAKE['frosting'] = frost
     CAKE['size'] = size
     
-    return render_template('customization.html', flav=flav, frost=frost)
+    return render_template('customization.html', flav=flav, frost=frost, size=size)
 
 @app.route('/payment', methods=['POST'])
 def payment():
@@ -181,6 +187,8 @@ def payment():
     CAKE['filling_one']=filling1
     CAKE['filling_two']=filling2
     CAKE['toppings']=wanted
+    
+    return render_template('payment.html')
 
   
 @app.route('/checkout', methods=['POST'])
