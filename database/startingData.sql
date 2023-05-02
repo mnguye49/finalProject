@@ -28,11 +28,3 @@ VALUES ('Strawberry Shortcake', 'Shortcake','Whipped Cream','Just Frosting','Sli
 INSERT into `inventory` (`item_name`,`flavor`,`frosting`,`filling_one`,`filling_two`,`toppings`,`size`,`image_url`)
 VALUES ('Pineapple Upside Down Cake', 'Pineapple', 'Whipped Cream', 'Just Frosting', 'Cherries with Frosting', ARRAY["Pineapple Slices', 'Cherries'], '4', 'static/images/pineappleUpsideDown.jpeg');
 
-INSERT into `sales` (`transaction_id`, `username`, `item_id`, `quantity`, `sale_date`, `cost`)
-VALUES ('1', 'aturing', '1', 10, '2022-12-21 7:30:30', 5.50);
-
-INSERT into `sales` (`transaction_id`, `username`, `item_id`, `quantity`, `sale_date`, `cost`)
-VALUES ('2', 'dritchie', '2', 10, '2022-12-21 7:30:30', 5.50);
-
-INSERT into `sales` (`transaction_id`, `username`, `item_id`, `quantity`, `sale_date`, `cost`)
-VALUES ('3', 'llamport', '3', 10, '2022-12-21 7:30:30', 5.50);
