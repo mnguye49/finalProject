@@ -1,13 +1,7 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<div class="row">
-    <div class="col-md-12" id="index_buttons">
-        <a href="/login" class="btn btn-primary" id="login_button">Login</a>
-        <a href="/register" class="btn btn-primary" id="register_button">Register</a>
-        <a href="/orderStart" class="btn btn-primary" id="just_order_button">Order without an account</a>
-    </div>
-</div>
+
 
 <div class="row" id="products_page">
     <div class="col-md-12">
@@ -24,8 +18,10 @@
                                     <img src="{{ product.image_url }}" class="product_card-img" alt="...">
                                     <div class="product_card-body">
                                         <h5 class="product_card-title">{{ product.item_name }}</h5>
-                                        <p class="product_card-text">{{ product.info }}</p>
-                                        <p class="product_card-price">${{ product.price }}</p>
+                                        <p class="product_card-text">{{ product.flavor }}</p>
+                                        <p class="product_card-frosting">${{ product.frosting }}</p>
+                                        <p class="product_card-fill1">${{ product.filling_one }}</p>
+                                        <p class="product_card-fill2">${{ product.filling_two }}</p>
                                     </div>
                                 </div>
                             </div>
