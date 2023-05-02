@@ -5,7 +5,7 @@ CREATE TABLE inventory (
     frosting VARCHAR(255) NOT NULL,
     filling1 VARCHAR(255) NOT NULL,
     filling2 VARCHAR(255) NOT NULL,
-    toppings text[],
+    toppings VARCHAR(255) ARRAY[20],
     price DECIMAL(10,2) NOT NULL,
     size VARCHAR(255) NOT NULL,
     image_url VARCHAR(255) NOT NULL
